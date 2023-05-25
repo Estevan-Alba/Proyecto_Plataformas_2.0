@@ -1,5 +1,6 @@
 package com.view.proyectofinal_registro_control_jaas
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,7 @@ class Menu_Login : AppCompatActivity() {
 
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_login)
@@ -46,6 +48,7 @@ class Menu_Login : AppCompatActivity() {
             iniciaSesion() } //metodo por si se da clic en el boton
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setupPasswordVisibilityToggle(editText: EditText?, ocultarIcono: Drawable, mostrarIcono: Drawable, iconocandado: Drawable?) {
         editText?.let {
             val drawableEnd = it.compoundDrawablesRelative[2] // Obtén la referencia al Drawable de drawableEnd
