@@ -42,7 +42,7 @@ class Menu_Login : AppCompatActivity() {
         val usuario: String = txtUsuario.text.toString()
         val contraseña: String = txtContraseña.text.toString()
 
-        var roles =""
+        var roles:String
 
         println("Sus datos son:\n"
                 + "Usuario: $usuario\n"
@@ -50,7 +50,7 @@ class Menu_Login : AppCompatActivity() {
 
 
         if(usuario.isNotEmpty() && contraseña.isNotEmpty()){
-            
+
             consulta.document(usuario).get().addOnSuccessListener {
 
                 println("Esta consultando...")
@@ -136,7 +136,7 @@ class Menu_Login : AppCompatActivity() {
                                     Toast.makeText(this, "Inicio de sesion Exitoso", Toast.LENGTH_SHORT)
                                         .show()
 
-                                    val intent = Intent(this, Menu_Admin::class.java)
+                                    //val intent = Intent(this, Menu_Admin::class.java)
                                     startActivity(intent)
 
                                     println("inicio sesion")
