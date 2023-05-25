@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MiEstiloBoton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@color/azul</item>
+        <!-- Otros atributos de estilo que desees aplicar -->
+    </style>
+
+</resources>

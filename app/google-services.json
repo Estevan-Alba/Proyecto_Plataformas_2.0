@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "68813345494",
+    "project_id": "proyectofinal-registroycontrol",
+    "storage_bucket": "proyectofinal-registroycontrol.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68813345494:android:8daad27dbeab239825af77",
+        "android_client_info": {
+          "package_name": "com.view.proyectofinal_registro_control_jaas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68813345494-r72bnjas596hm9t3uklik8kaookea295.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.view.proyectofinal_registro_control_jaas",
+            "certificate_hash": "4e334d889cbee7fc96570aa088e86038b2c1519d"
+          }
+        },
+        {
+          "client_id": "68813345494-o1oat7s63rtpf4rdmifqpop8rhis70kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgYrFelNwOS69EqevU5jAKl79ugPaBhhc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68813345494-o1oat7s63rtpf4rdmifqpop8rhis70kd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
