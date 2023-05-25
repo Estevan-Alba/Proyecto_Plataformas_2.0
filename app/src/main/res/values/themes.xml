@@ -5,7 +5,10 @@
     <style name="Base.Theme.ProyectoFinal_RegistroControl_JAAS" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Theme.ProyectoFinal_RegistroControl_JAAS" parent="Base.Theme.ProyectoFinal_RegistroControl_JAAS" />
+
 </resources>
