@@ -55,6 +55,7 @@ class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
                 val intent = Intent(this, Menu_Login::class.java)
                 startActivity(intent)
                 Toast.makeText(this,"Se cerro la sesion", Toast.LENGTH_SHORT).show()
+
             }
         }
         drawer.closeDrawer(GravityCompat.START)
