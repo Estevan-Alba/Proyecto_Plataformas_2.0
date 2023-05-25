@@ -17,14 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*Handler(Looper.getMainLooper()).postDelayed({
-            // Este método se ejecutará después del tiempo de duración y realizará las operaciones después de la pantalla de carga.
-            val intent = Intent(this, Menu_Login::class.java)
-            startActivity(intent)
-            finish()
-            Thread(Runnable {
-            }).start()
-        }, tiempo)*/
         Handler(Looper.getMainLooper()).postDelayed({
             val sc = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val redInfo = sc.allNetworkInfo

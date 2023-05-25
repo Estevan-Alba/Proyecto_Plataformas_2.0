@@ -1,5 +1,6 @@
 package com.view.proyectofinal_registro_control_jaas
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -38,9 +39,23 @@ class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.nav_item1 -> Toast.makeText(this,"item 1", Toast.LENGTH_SHORT).show()
-            R.id.nav_item2 -> Toast.makeText(this,"item 2", Toast.LENGTH_SHORT).show()
-            R.id.nav_item3 -> Toast.makeText(this,"item 3", Toast.LENGTH_SHORT).show()
+            R.id.nav_item1 -> {
+                Toast.makeText(this,"item 1", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_item2 -> {
+                Toast.makeText(this,"item 2", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_item3 -> {
+                Toast.makeText(this,"item 3", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_item4 -> {
+                val intent = Intent(this, Menu_Login::class.java)
+                startActivity(intent)
+                Toast.makeText(this,"Se cerro la sesion", Toast.LENGTH_SHORT).show()
+            }
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
