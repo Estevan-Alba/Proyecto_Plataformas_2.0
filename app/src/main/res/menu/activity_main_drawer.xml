@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/nav_item1"
+            android:icon="@drawable/abc_vector_test"
+            android:title="ESTUDIANTES"/>
+        <item android:id="@+id/nav_item2"
+            android:icon="@drawable/abc_vector_test"
+            android:title="PROFESORES"/>
+        <item android:id="@+id/nav_item3"
+            android:icon="@drawable/abc_vector_test"
+            android:title="ADMINISTRATIVOS"/>
+    </group>
+    <item android:title="ROL">
+        <menu>
+            <item android:id="@+id/nav_item4"
+                android:icon="@drawable/abc_vector_test"
+                android:title="ESTUDIANTES"/>
+            <item android:id="@+id/nav_item5"
+                android:icon="@drawable/abc_vector_test"
+                android:title="PROFESORES"/>
+            <item android:id="@+id/nav_item6"
+                android:icon="@drawable/abc_vector_test"
+                android:title="ADMINISTRATIVOS"/>
+        </menu>
+    </item>
+</menu>
