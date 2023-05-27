@@ -46,6 +46,8 @@ dependencies {
 
     implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.fragment:fragment-ktx:1.5.7'
+
 
     //dependencia para fireBase:
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
