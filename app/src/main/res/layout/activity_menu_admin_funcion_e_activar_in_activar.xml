@@ -48,7 +48,7 @@
 
 
         <EditText
-            android:id="@+id/CONTRASEÑA"
+            android:id="@+id/DOCUMENTO"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -59,20 +59,20 @@
             android:hint="CEDULA" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/buscarEstudiante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            android:backgroundTint="@drawable/fondo_principal"
-            android:text="BUSCAR" />
+            android:text="BUSCAR"
+            />
 
 
 
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="330dp"
             android:layout_marginTop="30dp"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
@@ -81,6 +81,7 @@
             app:layout_constraintStart_toStartOf="parent"
 
             >
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,6 +121,7 @@
                     android:layout_marginTop="5dp"
                     android:inputType="textEmailAddress"
                     android:selectAllOnFocus="true"
+                    android:enabled="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -137,12 +139,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     />
+
                 <EditText
                     android:id="@+id/USUARIO"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:selectAllOnFocus="true"
+                    android:enabled="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -171,9 +175,18 @@
                     android:layout_marginEnd="25dp"  />
 
 
+                <Button
+                    android:id="@+id/enviarEstado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="Actualizar Estado" />
 
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
 
 

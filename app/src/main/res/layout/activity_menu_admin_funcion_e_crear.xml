@@ -198,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
                 android:text="Estudiante"
-                android:inputType="none"
+                android:enabled="false"
                 android:selectAllOnFocus="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

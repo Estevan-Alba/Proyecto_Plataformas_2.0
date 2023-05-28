@@ -23,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class Menu_Login : AppCompatActivity() {
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
-    private val consulta = db.collection("correos")
+    private val consultaCorreos = db.collection("correos")
 
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -124,7 +124,7 @@ class Menu_Login : AppCompatActivity() {
 
         if (usuario.isNotEmpty() && contraseña.isNotEmpty()) {
 
-            consulta.document(usuario).get().addOnSuccessListener {
+            consultaCorreos.document(usuario).get().addOnSuccessListener {
 
                 println("Esta consultando...")
 
