@@ -113,7 +113,8 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
         db.collection("correos").document(usuario).set(
             hashMapOf(
                 "usuario" to usuario,
-                "Rol" to roles
+                "Rol" to roles,
+                "Estado" to estado
             )
         ).addOnCompleteListener {
             if (it.isSuccessful) {
