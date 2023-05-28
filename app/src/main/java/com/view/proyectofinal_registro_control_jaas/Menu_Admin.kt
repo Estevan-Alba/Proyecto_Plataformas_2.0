@@ -1,7 +1,6 @@
 package com.view.proyectofinal_registro_control_jaas
 
 import android.content.Intent
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
