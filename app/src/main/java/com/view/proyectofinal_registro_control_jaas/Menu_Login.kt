@@ -23,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class Menu_Login : AppCompatActivity() {
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
-    private val consulta = db.collection("usuarios")
+    private val consulta = db.collection("correos")
 
 
 
@@ -106,6 +106,7 @@ class Menu_Login : AppCompatActivity() {
             consulta.document(usuario).get().addOnSuccessListener {
 
                 println("Esta consultando...")
+
                 if (it.exists()) {
 
                     roles = it.getString("Rol").toString()

@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/crearEstudiante" />
 
     <Button
-        android:id="@+id/activar"
+        android:id="@+id/activaroInactivar"
         android:layout_width="290dp"
         android:layout_height="50dp"
         android:layout_marginStart="25dp"
