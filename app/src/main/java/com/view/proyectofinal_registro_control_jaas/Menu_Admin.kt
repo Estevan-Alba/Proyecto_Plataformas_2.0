@@ -9,8 +9,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import com.google.android.material.navigation.NavigationView
 
 class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
@@ -33,7 +31,6 @@ class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
 
         val NavigationView: NavigationView = findViewById(R.id.nav_view)
         NavigationView.setNavigationItemSelectedListener(this)
-print("julian")
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
