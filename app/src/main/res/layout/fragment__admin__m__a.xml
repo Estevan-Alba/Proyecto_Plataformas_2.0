@@ -35,9 +35,9 @@
         tools:ignore="MissingConstraints"/>
 
     <Button
-        android:id="@+id/crearEstudiante"
+        android:id="@+id/crearAdministrativo"
         android:layout_width="290dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/fondo_trans"
         android:text="CREAR ADMINISTRATIVO"
@@ -49,9 +49,9 @@
         />
 
     <Button
-        android:id="@+id/consultarEstudiante"
+        android:id="@+id/consultarAdministrativo"
         android:layout_width="290dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="25dp"
@@ -60,6 +60,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crearEstudiante" />
+        app:layout_constraintTop_toBottomOf="@+id/crearAdministrativo" />
+
+    <Button
+        android:id="@+id/activarAdministrativo"
+        android:layout_width="290dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/fondo_trans"
+        android:text="ACTIVAR-INACTIVAR ADMINISTRATIVO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consultarAdministrativo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

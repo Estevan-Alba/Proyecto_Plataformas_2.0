@@ -35,9 +35,9 @@
         tools:ignore="MissingConstraints"/>
 
     <Button
-        android:id="@+id/crearEstudiante"
+        android:id="@+id/crearProfesor"
         android:layout_width="290dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/fondo_trans"
         android:text="CREAR PROFESOR"
@@ -49,9 +49,9 @@
         />
 
     <Button
-        android:id="@+id/consultarEstudiante"
+        android:id="@+id/consultarProfesor"
         android:layout_width="290dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="25dp"
@@ -60,7 +60,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crearEstudiante" />
+        app:layout_constraintTop_toBottomOf="@+id/crearProfesor" />
+
+    <Button
+        android:id="@+id/activarProfesor"
+        android:layout_width="290dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/fondo_trans"
+        android:text="ACTIVAR-INACTIVAR PROFESOR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consultarProfesor" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
