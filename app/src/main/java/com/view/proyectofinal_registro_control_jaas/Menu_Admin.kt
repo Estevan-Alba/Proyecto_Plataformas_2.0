@@ -47,12 +47,19 @@ class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
                 }
             }
             R.id.nav_item2 -> {
-                Toast.makeText(this,"item 2", Toast.LENGTH_SHORT).show()
-
+                supportFragmentManager.commit {
+                    replace<Fragment_Admin_M_P>(R.id.contenedorfracmento)
+                    setReorderingAllowed(true)
+                    addToBackStack("replacement")
+                }
             }
 
             R.id.nav_item3 -> {
-                Toast.makeText(this,"item 3", Toast.LENGTH_SHORT).show()
+                supportFragmentManager.commit {
+                    replace<Fragment_Admin_M_A>(R.id.contenedorfracmento)
+                    setReorderingAllowed(true)
+                    addToBackStack("replacement")
+                }
             }
 
             R.id.nav_item4 -> {

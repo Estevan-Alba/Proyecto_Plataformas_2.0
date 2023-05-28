@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +7,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/fondo_principal"
-    tools:context=".Fragment_Admin_M_E">
+    tools:context=".Fragment_Admin_M_P">
 
     <ImageView
         android:id="@+id/imageView"
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="GESTIONAR ESTUDIANTES"
+        android:text="GESTIONAR PROFESORES"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +40,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/fondo_trans"
-        android:text="CREAR ESTUDIANTE"
+        android:text="CREAR PROFESOR"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,10 +56,11 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/fondo_trans"
-        android:text="CONSULTAR ESTUDIANTE"
+        android:text="CONSULTAR PROFESOR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crearEstudiante" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
