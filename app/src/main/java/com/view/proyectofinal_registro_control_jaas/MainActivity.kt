@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                     if (ir.typeName.equals("WIFI", ignoreCase = true)) {
                         if (ir.isConnected) {
                             runOnUiThread {
-                                Toast.makeText(this, "CONECTADO CON WiFi", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "conectado con wifi", Toast.LENGTH_SHORT).show()
                             }
                         }
                     }
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                     if (ir.typeName.equals("MOBILE", ignoreCase = true)) {
                         if (ir.isConnected) {
                             runOnUiThread {
-                                Toast.makeText(this, "CONECTADO CON DATOS MOVILES", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "conectado con datos moviles", Toast.LENGTH_SHORT).show()
                             }
                         }
                     }

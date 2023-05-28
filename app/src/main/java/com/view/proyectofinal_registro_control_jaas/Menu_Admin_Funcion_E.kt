@@ -12,7 +12,7 @@ import android.widget.Button
 class Menu_Admin_Funcion_E : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_admin_funcion_e)
+        setContentView(R.layout.menu_admin_funcion_e_crear)
 
         val spinner = findViewById<Spinner>(R.id.scrollear)
 
