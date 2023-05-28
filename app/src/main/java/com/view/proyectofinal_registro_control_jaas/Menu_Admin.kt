@@ -1,5 +1,6 @@
 package com.view.proyectofinal_registro_control_jaas
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +10,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.google.android.material.navigation.NavigationView
+
 
 class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
 
@@ -34,6 +38,7 @@ class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
         when(item.itemId){
             R.id.nav_item1 -> {
                 supportFragmentManager.commit {
