@@ -4,6 +4,11 @@
     <style name="MiEstiloBoton" parent="Widget.AppCompat.Button">
         <item name="android:background">@color/azul</item>
         <!-- Otros atributos de estilo que desees aplicar -->
-    </style>
 
+
+    </style>
+    <style name="CustomProgressBar" parent="@style/Base.Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:background">@color/Amarillo</item>
+    </style>
 </resources>

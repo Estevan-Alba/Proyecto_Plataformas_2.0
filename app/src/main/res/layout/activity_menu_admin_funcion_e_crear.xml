@@ -205,10 +205,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"/>
-
-
-
         </LinearLayout>
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
