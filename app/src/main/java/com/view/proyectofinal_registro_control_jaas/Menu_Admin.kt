@@ -13,7 +13,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.google.android.material.navigation.NavigationView
 
-class Menu_Admin : AppCompatActivity(){
+class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
 
     private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
@@ -32,12 +32,44 @@ class Menu_Admin : AppCompatActivity(){
         supportActionBar?.setHomeButtonEnabled(true)
 
         val NavigationView: NavigationView = findViewById(R.id.nav_view)
-        //NavigationView.setNavigationItemSelectedListener(this)
-
-        print("julian")
-
+        NavigationView.setNavigationItemSelectedListener(this)
+print("julian")
     }
 
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.nav_item1 -> {
+                supportFragmentManager.commit {
+                    replace<Fragment_Admin_M_E>(R.id.contenedorfracmento)
+                    setReorderingAllowed(true)
+                    addToBackStack("replacement")
+                }
+            }
+            R.id.nav_item2 -> {
+                supportFragmentManager.commit {
+                    replace<Fragment_Admin_M_P>(R.id.contenedorfracmento)
+                    setReorderingAllowed(true)
+                    addToBackStack("replacement")
+                }
+            }
 
+            R.id.nav_item3 -> {
+                supportFragmentManager.commit {
+                    replace<Fragment_Admin_M_A>(R.id.contenedorfracmento)
+                    setReorderingAllowed(true)
+                    addToBackStack("replacement")
+                }
+            }
+
+            R.id.nav_item4 -> {
+                val intent = Intent(this, Menu_Login::class.java)
+                startActivity(intent)
+                Toast.makeText(this,"Se cerro la sesion", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+        drawer.closeDrawer(GravityCompat.START)
+        return  true
+    }
 
 }
