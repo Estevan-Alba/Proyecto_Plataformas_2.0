@@ -20,7 +20,7 @@
             />
 
 
-        <item android:id="@+id/nav_item4"
+        <item android:id="@+id/nav_item3"
             android:icon="@drawable/icono_cerrar_s"
             android:title="CERRAR SESIÓN"
             tools:ignore="HardcodedText"

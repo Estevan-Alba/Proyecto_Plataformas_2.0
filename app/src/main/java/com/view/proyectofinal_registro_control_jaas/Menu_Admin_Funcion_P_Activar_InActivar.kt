@@ -14,7 +14,7 @@ class Menu_Admin_Funcion_P_Activar_InActivar : AppCompatActivity() {
 
     private val ActualizarEstadoCorreos = db.collection("correos")
     private val actualizarEstadoUsuarios = db.collection("usuarios")
-    F
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_admin_funcion_p_activar_in_activar)
