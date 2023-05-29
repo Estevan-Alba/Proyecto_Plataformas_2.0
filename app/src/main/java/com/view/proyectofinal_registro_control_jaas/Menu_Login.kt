@@ -9,7 +9,6 @@ import android.text.InputType
 import android.view.MotionEvent
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -24,6 +23,9 @@ class Menu_Login : AppCompatActivity() {
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
     private val consultaCorreos = db.collection("correos")
+
+    var usuario: String =  ""
+    var contraseña: String = ""
 
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -109,8 +111,8 @@ class Menu_Login : AppCompatActivity() {
         val txtUsuario: EditText = findViewById(R.id.usuario)
         val txtContraseña: EditText = findViewById(R.id.contraseña)
 
-        val usuario: String = txtUsuario.text.toString()
-        val contraseña: String = txtContraseña.text.toString()
+        usuario = txtUsuario.text.toString()
+        contraseña= txtContraseña.text.toString()
 
         var roles: String
         var estado: String
@@ -136,7 +138,7 @@ class Menu_Login : AppCompatActivity() {
                     println(roles)
                     println(estado)
 
-                    if (estado == "Activo") {
+                    if (estado == "Activo" || estado == "activo") {
 
                         when (roles) {
 
