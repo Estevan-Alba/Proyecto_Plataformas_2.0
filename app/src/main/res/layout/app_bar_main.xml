@@ -20,7 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/fondo_secundario"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:label="NOMBRE"
+            />
 
     </com.google.android.material.appbar.AppBarLayout>
 
