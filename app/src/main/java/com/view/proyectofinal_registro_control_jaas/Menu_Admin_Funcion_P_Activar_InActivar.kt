@@ -3,9 +3,11 @@ package com.view.proyectofinal_registro_control_jaas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class Activity_Menu_Estudiante : AppCompatActivity() {
+class Menu_Admin_Funcion_P_Activar_InActivar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_estudiante)
+        setContentView(R.layout.activity_menu_admin_funcion_p_activar_in_activar)
+
+
     }
 }

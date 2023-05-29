@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Menu_Admin_Funcion_E_Crear"
+    tools:context=".Menu_Admin_Funcion_P_Crear"
     android:background="@drawable/fondo_principal">
 
     <ImageView
@@ -198,7 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
-                android:text="Estudiante"
+                android:text="profesor"
                 android:enabled="false"
                 android:selectAllOnFocus="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -206,6 +205,52 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"/>
+
+            <Spinner
+                android:id="@+id/materia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:selectAllOnFocus="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+
+            <EditText
+                android:id="@+id/EXPERIENCIA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:hint="EXPERIENCIA EN AÑOS"
+                android:inputType="textEmailAddress"
+                android:selectAllOnFocus="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <EditText
+                android:id="@+id/UNIVERSIDAD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:hint="UNIVERSIDAD"
+                android:inputType="textEmailAddress"
+                android:selectAllOnFocus="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
+
+
+
         </LinearLayout>
 
     </ScrollView>

@@ -23,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class Menu_Login : AppCompatActivity() {
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
-    private val consulta = db.collection("correos")
+    private val consultaCorreos = db.collection("correos")
 
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -124,7 +124,7 @@ class Menu_Login : AppCompatActivity() {
 
         if (usuario.isNotEmpty() && contraseña.isNotEmpty()) {
 
-            consulta.document(usuario).get().addOnSuccessListener {
+            consultaCorreos.document(usuario).get().addOnSuccessListener {
 
                 println("Esta consultando...")
 
@@ -157,8 +157,8 @@ class Menu_Login : AppCompatActivity() {
                                             )
                                                 .show()
 
-                                            // val intent = Intent(this, Interfaz_Usuario::class.java)
-                                            //startActivity(intent)
+                                             val intent = Intent(this, Activity_Menu_Estu::class.java)
+                                            startActivity(intent)
 
                                             println("inicio sesion")
 
@@ -257,7 +257,7 @@ class Menu_Login : AppCompatActivity() {
                         }
 
                     } else {
-                        Toast.makeText(this, "Usuario se entra inactivo", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Usuario que entra inactivo", Toast.LENGTH_SHORT).show()
 
                     }
                 } else {

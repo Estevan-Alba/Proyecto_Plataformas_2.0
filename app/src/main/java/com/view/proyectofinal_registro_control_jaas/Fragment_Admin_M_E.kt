@@ -13,7 +13,7 @@ class Fragment_Admin_M_E : Fragment(R.layout.fragment__admin__m_e) {
 //forma de capturar nuestros elementos de la vista y traerlos a la logic
         val botonIrCrearEstudiante: Button = view.findViewById(R.id.crearEstudiante)
         val botonIrConsultarEstudiante: Button = view.findViewById(R.id.consultarEstudiante)
-        val botonIrActivaroInActivarEstudiante: Button = view.findViewById(R.id.activaroInactivar)
+        val botonIrActivaroInactivarEstudiante: Button = view.findViewById(R.id.activaroInactivar)
 
 
         botonIrCrearEstudiante.setOnClickListener {
@@ -26,7 +26,7 @@ class Fragment_Admin_M_E : Fragment(R.layout.fragment__admin__m_e) {
             startActivity(intent)
         }
 
-        botonIrActivaroInActivarEstudiante.setOnClickListener {
+        botonIrActivaroInactivarEstudiante.setOnClickListener {
             val intent = Intent(activity, Menu_Admin_Funcion_E_Activar_InActivar::class.java)
             startActivity(intent)
         }

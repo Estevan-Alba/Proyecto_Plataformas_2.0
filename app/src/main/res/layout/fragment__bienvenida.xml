@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment_Bienvenida"
+    android:background="@drawable/fondo_secundarioo">
+
+
+    <ImageView
+        android:id="@+id/imagen"
+        android:layout_width="match_parent"
+        android:layout_height="271dp"
+        android:src="@mipmap/iconojuan"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/txt_bienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Amarillo"
+        android:padding="60sp"
+        android:text="¡Bienvenido!"
+        android:textColor="@android:color/black"
+        android:textSize="45dp"
+        android:textStyle="italic"
+        android:layout_marginTop="320dp"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginTop="480dp"
+        android:src="@mipmap/bandera_foreground" />
+
+</FrameLayout>

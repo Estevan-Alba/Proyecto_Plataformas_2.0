@@ -33,8 +33,16 @@ class Menu_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
+        supportFragmentManager.commit {
+            replace<Fragment_Bienvenida>(R.id.contenedorfracmento)
+            setReorderingAllowed(true)
+            addToBackStack("replacement")
+        }
+
         val NavigationView: NavigationView = findViewById(R.id.nav_view)
         NavigationView.setNavigationItemSelectedListener(this)
+
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

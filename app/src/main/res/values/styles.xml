@@ -11,4 +11,10 @@
         <item name="android:layout_width">200dp</item>
         <item name="android:background">@color/Amarillo</item>
     </style>
+
+    <style name="MenuStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/fondo_secundario</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

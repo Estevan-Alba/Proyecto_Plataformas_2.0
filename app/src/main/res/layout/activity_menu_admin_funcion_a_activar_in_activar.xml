@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu_Admin_Funcion_E_Activar_InActivar"
+    tools:context=".Menu_Admin_Funcion_A_Activar_InActivar"
     android:background="@drawable/fondo_principal">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="ACTIVAR-INACTIVAR ESTUDIANTE"
+        android:text="ACTIVAR-INACTIVAR PROFESOR"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +43,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-
 
 
         <EditText

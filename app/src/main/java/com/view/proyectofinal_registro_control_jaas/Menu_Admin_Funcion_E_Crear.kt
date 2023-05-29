@@ -19,12 +19,17 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_admin_funcion_e_crear)
 
-        val botonInicio: Button = findViewById(R.id.registar)
+        val botonCrearEstudiante: Button = findViewById(R.id.registar)
+        val botonIrAtras: Button = findViewById(R.id.atras)
 
-        botonInicio.setOnClickListener {
+        botonCrearEstudiante.setOnClickListener {
             registrarEstudiante()
         }
 
+        botonIrAtras.setOnClickListener {
+            val intent = Intent(this, Fragment_Admin_M_E::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun registrarEstudiante() {
@@ -57,7 +62,7 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
             "Sus datos son:\n"
                     + "Documento: $documento\n"
                     + "Nombres: $nombres\n"
-                    + "Apellido: $apellido\n"
+                    + "Apellidos: $apellido\n"
                     + "Edad: $edad\n"
                     + "Direccion: $direccion\n"
                     + "Telefono: $telefono\n"
@@ -89,9 +94,9 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
 
                 val intent = Intent(this, Menu_Login::class.java)
                 startActivity(intent)
+
             } else {
                 Toast.makeText(this, "Correo $usuario ya registrado", Toast.LENGTH_SHORT).show()
-                println("Usuario no se pudo crear")
             }
         }
 
@@ -112,7 +117,6 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
 
         db.collection("correos").document(usuario).set(
             hashMapOf(
-                "usuario" to usuario,
                 "Rol" to roles,
                 "Estado" to estado
             )
@@ -129,7 +133,7 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
             hashMapOf(
                 "Documento" to documento,
                 "Nombres" to nombres,
-                "Apellido" to apellido,
+                "Apellidos" to apellido,
                 "Edad" to edad,
                 "Direccion" to direccion,
                 "Telefono" to telefono,
