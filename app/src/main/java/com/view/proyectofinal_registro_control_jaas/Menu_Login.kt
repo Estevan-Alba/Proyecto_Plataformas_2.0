@@ -38,12 +38,18 @@ class Menu_Login : AppCompatActivity() {
 
 
         val botonInicioSesion: Button =
-            findViewById(R.id.IniciarSesion) //forma de capturar nuestros elementos de la vista y traerlos a la logica
+            findViewById(R.id.IniciarSesion)
 
         botonInicioSesion.setOnClickListener {
 
             iniciaSesion()
-        } //metodo por si se da clic en el boton
+            Toast.makeText(
+                this,
+                "Procesando...",
+                Toast.LENGTH_SHORT
+            ).show()
+
+        }
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -194,7 +200,8 @@ class Menu_Login : AppCompatActivity() {
                                             )
                                                 .show()
 
-                                            val intent = Intent(this,Activity_Menu_Profe::class.java)
+                                            val intent =
+                                                Intent(this, Activity_Menu_Profe::class.java)
                                             startActivity(intent)
 
                                             println("inicio sesion")
@@ -225,11 +232,7 @@ class Menu_Login : AppCompatActivity() {
 
                                         println("$usuario| |$contraseña")
 
-                                        Toast.makeText(
-                                            this,
-                                            "Procesando...",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
+
 
                                         if (it.isSuccessful) {
                                             Toast.makeText(

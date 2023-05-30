@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/crearAdministrativo" />
 
     <Button
-        android:id="@+id/activarAdministrativo"
+        android:id="@+id/activaroInactivar"
         android:layout_width="290dp"
         android:layout_height="55dp"
         android:layout_marginStart="25dp"

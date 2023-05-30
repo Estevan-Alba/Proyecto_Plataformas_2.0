@@ -20,28 +20,28 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_admin_funcion_p_consultar)
 
-        val botonConsultarEstudiante: Button = findViewById(R.id.consultarEstudiantes)
+        val botonConsultarDocente: Button = findViewById(R.id.consultarDocente)
 
-        val botonActualizarEstudiante: Button = findViewById(R.id.actualizarEstudiante)
+        val botonActualizarDocente: Button = findViewById(R.id.actualizarDocente)
 
 
-        val botonIrAtras: Button = findViewById(R.id.atras)
+        val botonIrAtras: Button = findViewById(R.id.ATRASDO)
 
         botonIrAtras.setOnClickListener {
             val intent = Intent(this, Fragment_Admin_M_P::class.java)
             startActivity(intent)
         }
 
-        botonActualizarEstudiante.setOnClickListener {
-            actualizarEstudiate()
+        botonActualizarDocente.setOnClickListener {
+            actualizarDocente()
         }
 
-        botonConsultarEstudiante.setOnClickListener {
-            consultarEstudiante()
+        botonConsultarDocente.setOnClickListener {
+            consultarDocente()
         }
     }
 
-    private fun actualizarEstudiate() {
+    private fun actualizarDocente() {
 
         val txtdocumento: EditText = findViewById(R.id.DOCUMENTO)
         val txtnombres: EditText = findViewById(R.id.NOMBRE)
@@ -53,7 +53,7 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
         val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
         val txtrol: EditText = findViewById(R.id.ROL)
         val txtestado: EditText = findViewById(R.id.ESTADO)
-        val txtmateria:Spinner = findViewById(R.id.MATERIA)
+        val txtmateria:EditText = findViewById(R.id.MATERIA)
         val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
         val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
 
@@ -67,7 +67,7 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
         var contraseña: String = txtcontraseña.text.toString()
         var roles: String = txtrol.text.toString()
         var estado: String = txtestado.text.toString()
-        var materia: String = txtmateria.selectedItem.toString()
+        var materia: String = txtmateria.text.toString()
         var experiencia: String = txtexperiencia.text.toString()
         var universidad: String = txtuniversidad.text.toString()
 
@@ -110,7 +110,7 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
 
     }
 
-    private fun consultarEstudiante() {
+    private fun consultarDocente() {
 
         val txtdocumento: EditText = findViewById(R.id.DOCUMENTO)
         val documento: String = txtdocumento.text.toString()

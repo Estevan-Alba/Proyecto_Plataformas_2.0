@@ -25,7 +25,7 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
 
         val botonActualizarAdministrativo: Button = findViewById(R.id.actualizarAdministrativos)
 
-        val botonIrAtras: Button = findViewById(R.id.atras2)
+        val botonIrAtras: Button = findViewById(R.id.ATRASAD)
 
         botonIrAtras.setOnClickListener {
             val intent = Intent(this, Fragment_Admin_M_A::class.java)
@@ -125,8 +125,6 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         val documento: String = txtdocumento.text.toString()
 
 
-
-
         var dato1: String
         var dato2: String
         var dato3: String
@@ -137,6 +135,10 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         var dato8: String
         var dato9: String
         var dato10: String
+        var dato11: String
+        var dato12: String
+        var dato13: String
+        var dato14: String
 
 
         consultaUsuarios.document(documento).get().addOnSuccessListener {
@@ -146,14 +148,19 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
 
 
                 dato1 = it.getString("Apellidos").toString()
-                dato2 = it.getString("Contraseña").toString()
-                dato3 = it.getString("Direccion").toString()
+                dato2 = it.getString("Cargo").toString()
+                dato3 = it.getString("Contraseña").toString()
+                dato4 = it.getString("Direccion").toString()
                 dato5 = it.getString("Edad").toString()
                 dato6 = it.getString("Estado").toString()
-                dato7 = it.getString("Nombres").toString()
-                dato8 = it.getString("Rol").toString()
-                dato9 = it.getString("Telefono").toString()
-                dato10 = it.getString("Usuario").toString()
+                dato7 = it.getString("Experiencia").toString()
+                dato8 = it.getString("Facultad").toString()
+                dato9 = it.getString("Nombres").toString()
+                dato10 = it.getString("Rol").toString()
+                dato11= it.getString("Telefono").toString()
+                dato12 = it.getString("Universidad").toString()
+                dato13= it.getString("Usuario").toString()
+
 
                 val txtnombres: EditText = findViewById(R.id.NOMBRE)
                 val txtapellidos: EditText = findViewById(R.id.APELLIDO)
@@ -164,16 +171,24 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
                 val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
                 val txtrol: EditText = findViewById(R.id.ROL)
                 val txtestado: EditText = findViewById(R.id.ESTADO)
+                val txtcargo: EditText = findViewById(R.id.cargo)
+                val txtfacultad: EditText = findViewById(R.id.facultad)
+                val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
+                val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
 
                 txtapellidos.setText(dato1)
-                txtcontraseña.setText(dato2)
-                txtdireccion.setText(dato3)
+                txtcargo.setText(dato2)
+                txtcontraseña.setText(dato3)
+                txtdireccion.setText(dato4)
                 txtedad.setText(dato5)
                 txtestado.setText(dato6)
-                txtnombres.setText(dato7)
-                txtrol.setText(dato8)
-                txttelefono.setText(dato9)
-                txtusaurio.setText(dato10)
+                txtexperiencia.setText(dato7)
+                txtfacultad.setText(dato8)
+                txtnombres.setText(dato9)
+                txtrol.setText(dato10)
+                txttelefono.setText(dato11)
+                txtuniversidad.setText(dato12)
+                txtusaurio.setText(dato13)
             }
         }
 

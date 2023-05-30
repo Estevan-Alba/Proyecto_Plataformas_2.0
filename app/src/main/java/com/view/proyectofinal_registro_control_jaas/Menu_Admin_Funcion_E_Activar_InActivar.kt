@@ -24,7 +24,7 @@ class Menu_Admin_Funcion_E_Activar_InActivar : AppCompatActivity() {
 
         val botonActualizarEstado: Button = findViewById(R.id.enviarEstado)
         val botonConsultarEstudiante: Button = findViewById(R.id.buscarEstudiante)
-        val botonIrAtras: Button = findViewById(R.id.atras)
+        val botonIrAtras: Button = findViewById(R.id.ATRASES)
 
         botonIrAtras.setOnClickListener {
             val intent = Intent(this, Fragment_Admin_M_E::class.java)

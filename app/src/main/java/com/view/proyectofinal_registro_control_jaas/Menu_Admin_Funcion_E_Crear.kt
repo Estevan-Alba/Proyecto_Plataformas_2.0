@@ -20,7 +20,7 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
         setContentView(R.layout.activity_menu_admin_funcion_e_crear)
 
         val botonCrearEstudiante: Button = findViewById(R.id.registar)
-        val botonIrAtras: Button = findViewById(R.id.atras)
+        val botonIrAtras: Button = findViewById(R.id.ATRASES)
 
         botonCrearEstudiante.setOnClickListener {
             registrarEstudiante()

@@ -49,7 +49,7 @@
 
 
         <Button
-            android:id="@+id/atras"
+            android:id="@+id/ATRASES"
             android:layout_width="56dp"
             android:layout_height="50dp"
             android:background="@mipmap/atras_fondo_foreground" />

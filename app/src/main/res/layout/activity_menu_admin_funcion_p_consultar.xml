@@ -52,7 +52,7 @@
 
 
         <Button
-            android:id="@+id/atras"
+            android:id="@+id/ATRASDO"
             android:layout_width="56dp"
             android:layout_height="50dp"
             android:background="@mipmap/atras_fondo_foreground" />
@@ -72,7 +72,7 @@
             tools:ignore="HardcodedText,MissingConstraints" />
 
         <Button
-            android:id="@+id/consultarEstudiantes"
+            android:id="@+id/consultarDocente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -82,7 +82,7 @@
             tools:ignore="HardcodedText,MissingConstraints" />
 
         <Button
-            android:id="@+id/actualizarEstudiante"
+            android:id="@+id/actualizarDocente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"

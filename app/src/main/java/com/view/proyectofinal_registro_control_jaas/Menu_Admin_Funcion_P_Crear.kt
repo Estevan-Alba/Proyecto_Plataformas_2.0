@@ -32,7 +32,7 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
 
 
         val botonCrearEstudiante: Button = findViewById(R.id.registar)
-        val botonIrAtras: Button = findViewById(R.id.atras)
+        val botonIrAtras: Button = findViewById(R.id.ATRASDO)
 
         botonIrAtras.setOnClickListener {
             val intent = Intent(this, Fragment_Admin_M_P::class.java)

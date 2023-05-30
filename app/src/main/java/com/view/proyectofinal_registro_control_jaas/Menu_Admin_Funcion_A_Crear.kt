@@ -39,7 +39,8 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
         cargo.adapter = adapter1
 
         val botonCrearAdministrativo: Button = findViewById(R.id.registar)
-        val botonIrAtras: Button = findViewById(R.id.atras)
+
+        val botonIrAtras: Button = findViewById(R.id.ATRASAD)
 
         botonCrearAdministrativo.setOnClickListener {
             registrarAdministrativo()
