@@ -12,45 +12,76 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal_RegistroControl_JAAS"
         tools:targetApi="31">
-        <activity
-            android:name=".Menu_Admin_Funcion_P_Activar_InActivar"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_Admin_Funcion_P_Consultar"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_Admin_Funcion_P_Crear"
-            android:exported="false" />
-        <activity
-            android:name=".Activity_Menu_Estu"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_Admin_Funcion_E_Activar_InActivar"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_Admin_Funcion_E_Consultar"
-            android:exported="false" />
-        <activity
-            android:name=".Activity_Menu_Estudiante"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_Admin_Funcion_E_Crear"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_Admin"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_Login"
-            android:exported="false" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Menu_Login"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_A_Activar_InActivar"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_A_Consultar"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_A_Crear"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_P_Activar_InActivar"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_P_Consultar"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_P_Crear"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_E_Activar_InActivar"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_E_Consultar"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu_Admin_Funcion_E_Crear"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".Activity_Menu_Estu"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity_Menu_Profe"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity_Menu_Administrativo"
+            android:exported="false" />
+
     </application>
 
 </manifest>

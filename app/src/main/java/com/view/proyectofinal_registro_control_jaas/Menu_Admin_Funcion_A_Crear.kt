@@ -22,35 +22,36 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
         setContentView(R.layout.activity_menu_admin_funcion_a_crear)
 
         val facultad: Spinner = findViewById(R.id.facultad)
-
-        // Crea un ArrayAdapter utilizando un arreglo de opciones
-        val opciones = arrayOf("Administración de Empresas","Administración" +
-                "Turística y Hotelera","Artes Visuales","Derecho","Ingeniería" +
-                "de Sistemas","Ingeniería Civil")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
-        print(opciones)
-
         val cargo: Spinner = findViewById(R.id.cargo)
 
         // Crea un ArrayAdapter utilizando un arreglo de opciones
-        val opciones1 = arrayOf("secretaria","rector","")
-        val adapter1 = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
-        print(opciones)
+        val opciones = arrayOf(
+            "Administración de Empresas", "Administración" +
+                    "Turística y Hotelera", "Artes Visuales", "Derecho", "Ingeniería" +
+                    "de Sistemas", "Ingeniería Civil"
+        )
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
+        facultad.adapter = adapter
 
-        val botonCrearEstudiante: Button = findViewById(R.id.registar)
+        // Crea un ArrayAdapter utilizando un arreglo de opciones
+        val opciones1 = arrayOf("secretaria", "rector", "Decano", "Director de programa")
+        val adapter1 = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones1)
+        cargo.adapter = adapter1
+
+        val botonCrearAdministrativo: Button = findViewById(R.id.registar)
         val botonIrAtras: Button = findViewById(R.id.atras)
 
-        botonCrearEstudiante.setOnClickListener {
-            registrarEstudiante()
+        botonCrearAdministrativo.setOnClickListener {
+            registrarAdministrativo()
         }
 
         botonIrAtras.setOnClickListener {
-            val intent = Intent(this, Fragment_Admin_M_E::class.java)
+            val intent = Intent(this, Fragment_Admin_M_A::class.java)
             startActivity(intent)
         }
     }
 
-    private fun registrarEstudiante() {
+    private fun registrarAdministrativo() {
 
 
         val txtdocumento: EditText = findViewById(R.id.DOCUMENTO)
@@ -62,6 +63,11 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
         val txtusaurio: EditText = findViewById(R.id.USUARIO)
         val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
         val txtrol: EditText = findViewById(R.id.ROL)
+        val txtcargo: Spinner = findViewById(R.id.cargo)
+        val txtfacultad: Spinner = findViewById(R.id.facultad)
+        val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
+        val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
+
 
 
         var documento: String = txtdocumento.text.toString()
@@ -73,6 +79,10 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
         var usuario: String = txtusaurio.text.toString()
         var contraseña: String = txtcontraseña.text.toString()
         var roles: String = txtrol.text.toString()
+        var cargo: String = txtcargo.selectedItem.toString()
+        var facultad: String = txtfacultad.selectedItem.toString()
+        var experiencia: String = txtexperiencia.text.toString()
+        var universidad: String = txtuniversidad.text.toString()
 
         var estado = "Activo"
 
@@ -103,7 +113,11 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
                     usuario,
                     contraseña,
                     roles,
-                    estado
+                    estado,
+                    cargo,
+                    facultad,
+                    experiencia,
+                    universidad
                 )
 
                 Toast.makeText(this, "Correo $usuario registrado exitosamente", Toast.LENGTH_SHORT)
@@ -130,7 +144,11 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
         usuario: String,
         contraseña: String,
         roles: String,
-        estado: String
+        estado: String,
+        cargo: String,
+        facultad: String,
+        experiencia: String,
+        universidad: String
     ) {
 
         db.collection("correos").document(usuario).set(
@@ -143,7 +161,8 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
                 Toast.makeText(this, "Datos registrados", Toast.LENGTH_SHORT).show()
 
             } else {
-                Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
@@ -158,7 +177,11 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
                 "Usuario" to usuario,
                 "Contraseña" to contraseña,
                 "Rol" to roles,
-                "Estado" to estado
+                "Estado" to estado,
+                "Cargo" to cargo,
+                "Facultad" to facultad,
+                "Experiencia" to experiencia,
+                "Universidad" to universidad
             )
         ).addOnCompleteListener {
 
@@ -166,7 +189,8 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
                 Toast.makeText(this, "Datos registrados", Toast.LENGTH_SHORT).show()
 
             } else {
-                Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }

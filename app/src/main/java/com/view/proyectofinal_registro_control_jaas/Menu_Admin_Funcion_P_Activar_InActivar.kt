@@ -1,5 +1,6 @@
 package com.view.proyectofinal_registro_control_jaas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -22,20 +23,26 @@ class Menu_Admin_Funcion_P_Activar_InActivar : AppCompatActivity() {
 
 
         val botonActualizarEstado: Button = findViewById(R.id.enviarEstado)
-        val botonConsultarEstudiante: Button = findViewById(R.id.buscarEstudiante)
+        val botonConsultarDocente: Button = findViewById(R.id.buscarDocente)
+        val botonIrAtras: Button = findViewById(R.id.atras)
+
+        botonIrAtras.setOnClickListener {
+            val intent = Intent(this, Fragment_Admin_M_P::class.java)
+            startActivity(intent)
+        }
 
         botonActualizarEstado.setOnClickListener {
             actualizarEstado()
         }
 
-        botonConsultarEstudiante.setOnClickListener {
-            consultarEstudiante()
+        botonConsultarDocente.setOnClickListener {
+            consultarDocente()
         }
 
 
     }
 
-    private fun consultarEstudiante() {
+    private fun consultarDocente() {
 
         val txtdocumento: EditText = findViewById(R.id.DOCUMENTO)
         val documento: String = txtdocumento.text.toString()

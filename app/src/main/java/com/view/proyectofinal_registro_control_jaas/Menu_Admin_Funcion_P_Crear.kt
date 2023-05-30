@@ -22,29 +22,31 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_admin_funcion_p_crear)
 
-        val spinner: Spinner = findViewById(R.id.materia)
+        val spinner: Spinner = findViewById(R.id.MATERIA)
 
         // Crea un ArrayAdapter utilizando un arreglo de opciones
         val opciones = arrayOf("Fundamento Matemático", "Física I", "Lógica Matemática", "Introducción a la Ingeniería", "Algoritmia", "Técnicas de Lectura y Escritua", "Vida Universitaria")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
-        print(opciones)
+        spinner.adapter = adapter
 
 
 
         val botonCrearEstudiante: Button = findViewById(R.id.registar)
         val botonIrAtras: Button = findViewById(R.id.atras)
 
-        botonCrearEstudiante.setOnClickListener {
-            registrarEstudiante()
-        }
-
         botonIrAtras.setOnClickListener {
-            val intent = Intent(this, Fragment_Admin_M_E::class.java)
+            val intent = Intent(this, Fragment_Admin_M_P::class.java)
             startActivity(intent)
         }
+
+        botonCrearEstudiante.setOnClickListener {
+            registrarDocente()
+        }
+
+
     }
 
-    private fun registrarEstudiante() {
+    private fun registrarDocente() {
 
 
         val txtdocumento: EditText = findViewById(R.id.DOCUMENTO)
@@ -56,6 +58,10 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
         val txtusaurio: EditText = findViewById(R.id.USUARIO)
         val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
         val txtrol: EditText = findViewById(R.id.ROL)
+        val txtmateria:Spinner = findViewById(R.id.MATERIA)
+        val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
+        val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
+
 
 
         var documento: String = txtdocumento.text.toString()
@@ -67,6 +73,10 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
         var usuario: String = txtusaurio.text.toString()
         var contraseña: String = txtcontraseña.text.toString()
         var roles: String = txtrol.text.toString()
+        var materia: String = txtmateria.selectedItem.toString()
+        var experiencia: String = txtexperiencia.text.toString()
+        var universidad: String = txtuniversidad.text.toString()
+
 
         var estado = "Activo"
 
@@ -81,6 +91,9 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
                     + "Usuario: $usuario\n"
                     + "Contraseña: $contraseña\n"
                     + "Rol: $roles"
+                    + "Materia: $materia"
+                    + "Experiencia: $experiencia"
+                    + "Universidad: $universidad"
         )
 
         auth.createUserWithEmailAndPassword(usuario, contraseña).addOnCompleteListener(this) {
@@ -97,7 +110,11 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
                     usuario,
                     contraseña,
                     roles,
-                    estado
+                    estado,
+                    materia,
+                    experiencia,
+                    universidad
+
                 )
 
                 Toast.makeText(this, "Correo $usuario registrado exitosamente", Toast.LENGTH_SHORT)
@@ -124,7 +141,10 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
         usuario: String,
         contraseña: String,
         roles: String,
-        estado: String
+        estado: String,
+        materia: String,
+        experiencia: String,
+        universidad: String
     ) {
 
         db.collection("correos").document(usuario).set(
@@ -152,7 +172,10 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
                 "Usuario" to usuario,
                 "Contraseña" to contraseña,
                 "Rol" to roles,
-                "Estado" to estado
+                "Estado" to estado,
+                "Materia" to materia,
+                "Experiencia" to experiencia,
+                "Universidad" to universidad
             )
         ).addOnCompleteListener {
 

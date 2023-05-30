@@ -21,6 +21,18 @@
         app:layout_constraintVertical_bias="0.043"
         tools:ignore="HardcodedText,MissingConstraints" />
 
+    <Button
+        android:id="@+id/atras"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/atras_boton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -48,7 +60,7 @@
 
 
         <Button
-            android:id="@+id/atras"
+            android:id="@+id/atras2"
             android:layout_width="56dp"
             android:layout_height="50dp"
             android:background="@mipmap/atras_fondo_foreground" />
@@ -68,7 +80,7 @@
             tools:ignore="HardcodedText,MissingConstraints" />
 
         <Button
-            android:id="@+id/consultarEstudiantes"
+            android:id="@+id/consultarAdministrativos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -78,13 +90,12 @@
             tools:ignore="HardcodedText,MissingConstraints" />
 
         <Button
-            android:id="@+id/actualizarEstudiante"
+            android:id="@+id/actualizarAdministrativos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="340dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/fondo_principal"
             android:text="ACTUALIZAR ESTUDIANTE"
             app:layout_constraintTop_toBottomOf="@+id/button5"
             tools:ignore="HardcodedText,MissingConstraints"
@@ -221,7 +232,7 @@
                     android:hint="TELEFONO"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/TELEFONO"
@@ -351,7 +362,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="HardcodedText,MissingConstraints"/>
 
-                <Spinner
+                <EditText
                     android:id="@+id/cargo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -359,6 +370,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:selectAllOnFocus="true"
+                    android:enabled="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -375,7 +387,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="HardcodedText,MissingConstraints"/>
 
-                <Spinner
+                <EditText
                     android:id="@+id/facultad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -383,6 +395,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:selectAllOnFocus="true"
+                    android:enabled="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -420,13 +433,13 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="25dp"
-                    android:hint="COLEGIO EGRESADO"
+                    android:hint="UNIVERSIDAD EGRESADO"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="HardcodedText,MissingConstraints"/>
 
                 <EditText
-                    android:id="@+id/COLEGIO"
+                    android:id="@+id/UNIVERSIDAD"
                     android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -1,5 +1,6 @@
 package com.view.proyectofinal_registro_control_jaas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -7,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.core.view.get
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
@@ -18,18 +20,17 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_admin_funcion_p_consultar)
 
-
-        val spinner: Spinner = findViewById(R.id.materia)
-
-        // Crea un ArrayAdapter utilizando un arreglo de opciones
-        val opciones = arrayOf("Fundamento Matemático", "Física I", "Lógica Matemática", "Introducción a la Ingeniería", "Algoritmia", "Técnicas de Lectura y Escritua", "Vida Universitaria")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
-        print(opciones)
-
         val botonConsultarEstudiante: Button = findViewById(R.id.consultarEstudiantes)
 
         val botonActualizarEstudiante: Button = findViewById(R.id.actualizarEstudiante)
 
+
+        val botonIrAtras: Button = findViewById(R.id.atras)
+
+        botonIrAtras.setOnClickListener {
+            val intent = Intent(this, Fragment_Admin_M_P::class.java)
+            startActivity(intent)
+        }
 
         botonActualizarEstudiante.setOnClickListener {
             actualizarEstudiate()
@@ -52,6 +53,9 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
         val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
         val txtrol: EditText = findViewById(R.id.ROL)
         val txtestado: EditText = findViewById(R.id.ESTADO)
+        val txtmateria:Spinner = findViewById(R.id.MATERIA)
+        val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
+        val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
 
         var documento: String = txtdocumento.text.toString()
         var nombres: String = txtnombres.text.toString()
@@ -63,6 +67,9 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
         var contraseña: String = txtcontraseña.text.toString()
         var roles: String = txtrol.text.toString()
         var estado: String = txtestado.text.toString()
+        var materia: String = txtmateria.selectedItem.toString()
+        var experiencia: String = txtexperiencia.text.toString()
+        var universidad: String = txtuniversidad.text.toString()
 
         val datosActualizados = hashMapOf<String, Any>(
             "Documento" to documento,
@@ -74,7 +81,10 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
             "Usuario" to usuario,
             "Contraseña" to contraseña,
             "Rol" to roles,
-            "Estado" to estado
+            "Estado" to estado,
+            "Materia" to materia,
+            "Experiencia" to experiencia,
+            "Universidad" to universidad
         )
 
         actualizarUsuarios.document(documento).update(datosActualizados)
@@ -91,6 +101,8 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
                 txtcontraseña.text.clear()
                 txtrol.text.clear()
                 txtestado.text.clear()
+                txtexperiencia.text.clear()
+                txtuniversidad.text.clear()
             }
             .addOnFailureListener {
                 Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
@@ -116,6 +128,8 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
         var dato8: String
         var dato9: String
         var dato10: String
+        var dato11: String
+        var dato12: String
 
 
         consultaUsuarios.document(documento).get().addOnSuccessListener {
@@ -127,12 +141,15 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
                 dato1 = it.getString("Apellidos").toString()
                 dato2 = it.getString("Contraseña").toString()
                 dato3 = it.getString("Direccion").toString()
-                dato5 = it.getString("Edad").toString()
-                dato6 = it.getString("Estado").toString()
-                dato7 = it.getString("Nombres").toString()
-                dato8 = it.getString("Rol").toString()
-                dato9 = it.getString("Telefono").toString()
-                dato10 = it.getString("Usuario").toString()
+                dato4 = it.getString("Edad").toString()
+                dato5 = it.getString("Estado").toString()
+                dato6 = it.getString("Experiencia").toString()
+                dato7 = it.getString("Materia").toString()
+                dato8 = it.getString("Nombres").toString()
+                dato9 = it.getString("Rol").toString()
+                dato10 = it.getString("Telefono").toString()
+                dato11 = it.getString("Universidad").toString()
+                dato12 = it.getString("Usuario").toString()
 
                 val txtnombres: EditText = findViewById(R.id.NOMBRE)
                 val txtapellidos: EditText = findViewById(R.id.APELLIDO)
@@ -143,16 +160,22 @@ class Menu_Admin_Funcion_P_Consultar : AppCompatActivity() {
                 val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
                 val txtrol: EditText = findViewById(R.id.ROL)
                 val txtestado: EditText = findViewById(R.id.ESTADO)
+                val txtmateria:EditText = findViewById(R.id.MATERIA)
+                val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
+                val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
 
                 txtapellidos.setText(dato1)
                 txtcontraseña.setText(dato2)
                 txtdireccion.setText(dato3)
-                txtedad.setText(dato5)
-                txtestado.setText(dato6)
-                txtnombres.setText(dato7)
-                txtrol.setText(dato8)
-                txttelefono.setText(dato9)
-                txtusaurio.setText(dato10)
+                txtedad.setText(dato4)
+                txtestado.setText(dato5)
+                txtexperiencia.setText(dato6)
+                txtmateria.setText(dato7)
+                txtnombres.setText(dato8)
+                txtrol.setText(dato9)
+                txttelefono.setText(dato10)
+                txtuniversidad.setText(dato11)
+                txtusaurio.setText(dato12)
             }
         }
 

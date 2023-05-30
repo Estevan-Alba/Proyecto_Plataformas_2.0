@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043"
+        app:layout_constraintVertical_bias="0.046"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
@@ -29,10 +29,12 @@
         android:text="CONSULTAR ESTUDIANTE"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.018"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <LinearLayout
@@ -43,8 +45,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.574">
 
 
         <Button
@@ -55,7 +59,6 @@
 
         <EditText
             android:id="@+id/DOCUMENTO"
-            android:importantForAutofill="no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="58dp"
@@ -64,6 +67,7 @@
             android:drawableEnd="@drawable/icono_atras"
             android:gravity="center"
             android:hint="CEDULA"
+            android:importantForAutofill="no"
             android:inputType="text"
             tools:ignore="HardcodedText,MissingConstraints" />
 
@@ -121,12 +125,12 @@
 
                 <EditText
                     android:id="@+id/NOMBRE"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -147,12 +151,12 @@
 
                 <EditText
                     android:id="@+id/APELLIDO"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -174,12 +178,12 @@
 
                 <EditText
                     android:id="@+id/EDAD"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -196,16 +200,16 @@
                     android:hint="DIRECCION"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/DIRECCION"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -221,16 +225,16 @@
                     android:hint="TELEFONO"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/TELEFONO"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -246,18 +250,18 @@
                     android:hint="USUARIO"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/USUARIO"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
-                    android:inputType="text"
                     android:enabled="false"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -272,16 +276,16 @@
                     android:hint="CONTRASEÑA"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/CONTRASEÑA"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -297,17 +301,17 @@
                     android:hint="ROL"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/ROL"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
                     android:enabled="false"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -323,17 +327,17 @@
                     android:hint="ESTADO"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/ESTADO"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
                     android:enabled="false"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -349,20 +353,23 @@
                     android:hint="MATERIA"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
-                <Spinner
-                    android:id="@+id/materia"
+                <EditText
+                    android:id="@+id/MATERIA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="25dp"
+                    android:enabled="false"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    />
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -373,17 +380,16 @@
                     android:hint="EXPERIENCIA"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/EXPERIENCIA"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
-                    android:enabled="false"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -399,17 +405,17 @@
                     android:hint="UNIVERSIDAD"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="HardcodedText,MissingConstraints"/>
+                    tools:ignore="HardcodedText,MissingConstraints" />
 
                 <EditText
                     android:id="@+id/UNIVERSIDAD"
-                    android:importantForAutofill="no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="25dp"
                     android:enabled="false"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
                     app:layout_constraintEnd_toEndOf="parent"

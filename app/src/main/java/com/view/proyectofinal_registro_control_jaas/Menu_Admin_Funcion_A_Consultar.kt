@@ -1,5 +1,6 @@
 package com.view.proyectofinal_registro_control_jaas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -20,37 +21,29 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         setContentView(R.layout.activity_menu_admin_funcion_a_consultar)
 
 
-        val facultad: Spinner = findViewById(R.id.facultad)
+        val botonConsultarAdministrativo: Button = findViewById(R.id.consultarAdministrativos)
 
-        // Crea un ArrayAdapter utilizando un arreglo de opciones
-        val opciones = arrayOf("Administración de Empresas","Administración" +
-                "Turística y Hotelera","Artes Visuales","Derecho","Ingeniería" +
-                "de Sistemas","Ingeniería Civil")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
-        print(opciones)
+        val botonActualizarAdministrativo: Button = findViewById(R.id.actualizarAdministrativos)
 
-        val cargo: Spinner = findViewById(R.id.cargo)
+        val botonIrAtras: Button = findViewById(R.id.atras2)
 
-        // Crea un ArrayAdapter utilizando un arreglo de opciones
-        val opciones1 = arrayOf("decano","secretaria","documentacion","directora de programa","administrador archivos")
-        val adapter1 = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
-        print(opciones)
-
-        val botonConsultarEstudiante: Button = findViewById(R.id.consultarEstudiantes)
-
-        val botonActualizarEstudiante: Button = findViewById(R.id.actualizarEstudiante)
-
-
-        botonActualizarEstudiante.setOnClickListener {
-            actualizarEstudiate()
+        botonIrAtras.setOnClickListener {
+            val intent = Intent(this, Fragment_Admin_M_A::class.java)
+            startActivity(intent)
         }
 
-        botonConsultarEstudiante.setOnClickListener {
+
+
+        botonActualizarAdministrativo.setOnClickListener {
+            actualizarAdministrativo()
+        }
+
+        botonConsultarAdministrativo.setOnClickListener {
             consultarEstudiante()
         }
     }
 
-    private fun actualizarEstudiate() {
+    private fun actualizarAdministrativo() {
 
         val txtdocumento: EditText = findViewById(R.id.DOCUMENTO)
         val txtnombres: EditText = findViewById(R.id.NOMBRE)
@@ -62,6 +55,10 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
         val txtrol: EditText = findViewById(R.id.ROL)
         val txtestado: EditText = findViewById(R.id.ESTADO)
+        val txtcargo: EditText = findViewById(R.id.cargo)
+        val txtfacultad: EditText = findViewById(R.id.facultad)
+        val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
+        val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
 
         var documento: String = txtdocumento.text.toString()
         var nombres: String = txtnombres.text.toString()
@@ -73,6 +70,10 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         var contraseña: String = txtcontraseña.text.toString()
         var roles: String = txtrol.text.toString()
         var estado: String = txtestado.text.toString()
+        var cargo: String = txtcargo.text.toString()
+        var facultad: String = txtfacultad.text.toString()
+        var experiencia: String = txtexperiencia.text.toString()
+        var universidad: String = txtuniversidad.text.toString()
 
         val datosActualizados = hashMapOf<String, Any>(
             "Documento" to documento,
@@ -84,7 +85,11 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
             "Usuario" to usuario,
             "Contraseña" to contraseña,
             "Rol" to roles,
-            "Estado" to estado
+            "Estado" to estado,
+            "Cargo" to cargo,
+            "Facultad" to facultad,
+            "Experiencia" to experiencia,
+            "Universidad" to universidad
         )
 
         actualizarUsuarios.document(documento).update(datosActualizados)
@@ -101,6 +106,12 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
                 txtcontraseña.text.clear()
                 txtrol.text.clear()
                 txtestado.text.clear()
+                txtcargo.text.clear()
+                txtfacultad.text.clear()
+                txtexperiencia.text.clear()
+                txtuniversidad.text.clear()
+
+
             }
             .addOnFailureListener {
                 Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()

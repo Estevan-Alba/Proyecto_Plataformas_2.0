@@ -24,10 +24,6 @@ class Menu_Login : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
     private val consultaCorreos = db.collection("correos")
 
-    var usuario: String =  ""
-    var contraseña: String = ""
-
-
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,8 +107,8 @@ class Menu_Login : AppCompatActivity() {
         val txtUsuario: EditText = findViewById(R.id.usuario)
         val txtContraseña: EditText = findViewById(R.id.contraseña)
 
-        usuario = txtUsuario.text.toString()
-        contraseña= txtContraseña.text.toString()
+        val usuario = txtUsuario.text.toString()
+        val contraseña = txtContraseña.text.toString()
 
         var roles: String
         var estado: String
@@ -159,7 +155,8 @@ class Menu_Login : AppCompatActivity() {
                                             )
                                                 .show()
 
-                                             val intent = Intent(this, Activity_Menu_Estu::class.java)
+                                            val intent =
+                                                Intent(this, Activity_Menu_Estu::class.java)
                                             startActivity(intent)
 
                                             println("inicio sesion")
@@ -197,8 +194,8 @@ class Menu_Login : AppCompatActivity() {
                                             )
                                                 .show()
 
-                                            // val intent = Intent(this, Interfaz_Docentes::class.java)
-                                            // startActivity(intent)
+                                            val intent = Intent(this,Activity_Menu_Profe::class.java)
+                                            startActivity(intent)
 
                                             println("inicio sesion")
 
@@ -228,7 +225,11 @@ class Menu_Login : AppCompatActivity() {
 
                                         println("$usuario| |$contraseña")
 
-                                        println("esta procesando")
+                                        Toast.makeText(
+                                            this,
+                                            "Procesando...",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
 
                                         if (it.isSuccessful) {
                                             Toast.makeText(
@@ -241,7 +242,6 @@ class Menu_Login : AppCompatActivity() {
                                             val intent = Intent(this, Menu_Admin::class.java)
                                             startActivity(intent)
 
-                                            println("inicio sesion")
 
                                         } else {
 
@@ -252,19 +252,28 @@ class Menu_Login : AppCompatActivity() {
                                             )
                                                 .show()
 
-                                            println("error al iniciar sesion")
+
                                         }
                                     }
                             }
                         }
 
                     } else {
-                        Toast.makeText(this, "Usuario que entra inactivo", Toast.LENGTH_SHORT).show()
-
+                        Toast.makeText(
+                            this,
+                            "Usuario usted se encuentra Inactivo",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        Toast.makeText(
+                            this,
+                            "Comunicarse con Registro y Control para su activacion",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        limpiarCamposTexto()
                     }
                 } else {
                     Toast.makeText(this, "Usuario no registrado en BD", Toast.LENGTH_SHORT).show()
-
+                    limpiarCamposTexto()
                 }
             }
 

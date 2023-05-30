@@ -208,7 +208,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="administrativo"
+                android:text="Administrativo"
                 android:enabled="false"
                 android:selectAllOnFocus="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -282,11 +282,11 @@
                 android:layout_marginEnd="25dp"/>
 
             <EditText
-                android:id="@+id/COLEGIO"
+                android:id="@+id/UNIVERSIDAD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
-                android:hint="COLEGIO EGRESADO"
+                android:hint="UNIVERSIDAD EGRESADO"
                 android:inputType="textEmailAddress"
                 android:selectAllOnFocus="true"
                 app:layout_constraintEnd_toEndOf="parent"

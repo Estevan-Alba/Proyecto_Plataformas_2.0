@@ -5,30 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_principal"
-    tools:context=".Menu_Login"
-
-    >
-
-    <!--<ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="153dp"
-        android:layout_height="120dp"
-        android:contentDescription="JDC2"
-        android:scaleType="fitCenter"
-        android:src="@mipmap/usaurio"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122"
-        tools:ignore="HardcodedText" />-->
+    tools:context=".Menu_Login">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="190dp"
+        android:layout_height="176dp"
         android:contentDescription="JDC"
         android:scaleType="centerCrop"
         android:src="@mipmap/iconojuan"
@@ -36,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073"
+        app:layout_constraintVertical_bias="0.072"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -44,7 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-black"
         android:text="INICIO DE SESIÓN"
         android:textColor="@color/black"
@@ -53,10 +34,10 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.091"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <LinearLayout
@@ -64,16 +45,16 @@
         android:id="@+id/linearLayout"
         android:layout_width="339dp"
         android:layout_height="268dp"
-        android:layout_marginTop="350dp"
         android:background="@drawable/fondo_trans"
         android:gravity="center"
         android:orientation="vertical"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.182">
 
 
         <EditText
@@ -114,7 +95,6 @@
             tools:ignore="HardcodedText" />
 
 
-
     </LinearLayout>
 
     <Button
@@ -124,17 +104,17 @@
         android:layout_marginTop="35dp"
         android:layout_marginBottom="35dp"
         android:backgroundTint="@color/cielo"
+        android:text="Iniciar sesión"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:text="Iniciar sesión"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.011"
+        app:layout_constraintVertical_bias="0.381"
         tools:ignore="HardcodedText" />
 
 
