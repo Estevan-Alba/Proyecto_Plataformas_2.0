@@ -23,9 +23,11 @@
         android:padding="60sp"
         android:text="¡Bienvenido!"
         android:textColor="@android:color/black"
-        android:textSize="45dp"
+        android:textSize="50dp"
+        android:gravity="center"
         android:textStyle="italic"
         android:layout_marginTop="320dp"
+
         />
 
     <ImageView

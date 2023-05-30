@@ -82,6 +82,27 @@
             android:name=".Activity_Menu_Administrativo"
             android:exported="false" />
 
+
+        <activity
+            android:name=".Fragment_Bienvenida"
+            android:exported="false" />
+
+        <activity
+            android:name=".Fragment_Admin_M_A"
+            android:exported="false" />
+
+        <activity
+            android:name=".Fragment_Admin_M_E"
+            android:exported="false" />
+
+        <activity
+            android:name=".Fragment_Admin_M_P"
+            android:exported="false" />
+
+
+
+
+
     </application>
 
 </manifest>
