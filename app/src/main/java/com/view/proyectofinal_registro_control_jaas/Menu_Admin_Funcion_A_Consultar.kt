@@ -122,10 +122,8 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
     }
 
     private fun consultarEstudiante() {
-
         val txtdocumento: EditText = findViewById(R.id.DOCUMENTO)
         val documento: String = txtdocumento.text.toString()
-
 
         var dato1: String
         var dato2: String
@@ -196,7 +194,6 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
                     Toast.makeText(this, "El documento $documento no se encuentra registrado", Toast.LENGTH_SHORT).show()
                 }
             }
-
         }else{
             Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
         }
