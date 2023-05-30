@@ -75,7 +75,19 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         var experiencia: String = txtexperiencia.text.toString()
         var universidad: String = txtuniversidad.text.toString()
 
-        if(documento.isNotEmpty()){
+        if(documento.isNotEmpty()
+            && nombres.isNotEmpty()
+            && apellido.isNotEmpty()
+            && edad.isNotEmpty()
+            && direccion.isNotEmpty()
+            && telefono.isNotEmpty()
+            && usuario.isNotEmpty()
+            && contraseña.isNotEmpty()
+            && roles.isNotEmpty()
+            && estado.isNotEmpty()
+            && experiencia.isNotEmpty()
+            && universidad.isNotEmpty()
+            && documento.matches(Regex("[0-9]*"))){
 
             val datosActualizados = hashMapOf<String, Any>(
                 "Documento" to documento,
@@ -117,7 +129,9 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
                     Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
                 }
         }else{
-            Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Campos requeridos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
+
         }
     }
 
@@ -141,7 +155,7 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         var dato14: String
 
 
-        if(documento.isNotEmpty()){
+        if(documento.isNotEmpty() && documento.matches(Regex("[0-9]*")) ){
 
             consultaUsuarios.document(documento).get().addOnSuccessListener {
                 println("Esta consultando el estudiante...")
@@ -196,6 +210,8 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
             }
         }else{
             Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
+
         }
     }
 }

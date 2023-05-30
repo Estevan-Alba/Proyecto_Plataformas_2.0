@@ -112,6 +112,7 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
             && estado.isNotEmpty()
             && experiencia.isNotEmpty()
             && universidad.isNotEmpty()
+            && documento.matches(Regex("[0-9]*"))
         ){
 
             auth.createUserWithEmailAndPassword(usuario, contraseña).addOnCompleteListener(this) {
@@ -148,6 +149,8 @@ class Menu_Admin_Funcion_A_Crear : AppCompatActivity() {
             }
         }else{
             Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
+
         }
     }
 

@@ -33,6 +33,7 @@ class Menu_Login : AppCompatActivity() {
         val ocultarIcono = resources.getDrawable(R.drawable.icono_mirarpassword)
         val mostrarIcono = resources.getDrawable(R.drawable.icono_ocultar_password)
         val candadoicono = resources.getDrawable(R.drawable.icono_password)
+
         /*metodo para que el usuario pueda ver la contraseña que esta digitando */
         setupPasswordVisibilityToggle(editText, ocultarIcono, mostrarIcono, candadoicono)
 
@@ -41,13 +42,14 @@ class Menu_Login : AppCompatActivity() {
             findViewById(R.id.IniciarSesion)
 
         botonInicioSesion.setOnClickListener {
-
-            iniciaSesion()
             Toast.makeText(
                 this,
                 "Procesando...",
                 Toast.LENGTH_SHORT
             ).show()
+
+            iniciaSesion()
+
 
         }
     }
@@ -100,7 +102,7 @@ class Menu_Login : AppCompatActivity() {
 
     private fun limpiarCamposTexto() {
         // Obtener las referencias de los EditText
-        val editText1: EditText = findViewById(R.id.email_edittext)
+        val editText1: EditText = findViewById(R.id.usuario)
         val editText2: EditText = findViewById(R.id.contraseña)
 
         // Limpia los campos de texto
@@ -176,7 +178,7 @@ class Menu_Login : AppCompatActivity() {
                                             )
                                                 .show()
 
-                                            println("error al iniciar sesion")
+                                            limpiarCamposTexto()
                                         }
                                     }
 
@@ -215,7 +217,7 @@ class Menu_Login : AppCompatActivity() {
                                             )
                                                 .show()
 
-                                            println("error al iniciar sesion")
+                                            limpiarCamposTexto()
                                         }
                                     }
 
@@ -255,6 +257,8 @@ class Menu_Login : AppCompatActivity() {
                                             )
                                                 .show()
 
+                                            limpiarCamposTexto()
+
 
                                         }
                                     }
@@ -281,7 +285,7 @@ class Menu_Login : AppCompatActivity() {
             }
 
         } else {
-
+            limpiarCamposTexto()
             Toast.makeText(this, "Campos requeridos", Toast.LENGTH_SHORT).show()
         }
     }

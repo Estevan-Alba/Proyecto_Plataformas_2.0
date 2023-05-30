@@ -82,6 +82,7 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
             && contraseña.isNotEmpty()
             && roles.isNotEmpty()
             && estado.isNotEmpty()
+            && documento.matches(Regex("[0-9]*"))
         ) {
 
             auth.createUserWithEmailAndPassword(usuario, contraseña).addOnCompleteListener(this) {
@@ -115,6 +116,7 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
 
         }else{
             Toast.makeText(this, "Campos requeridos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
         }
     }
 

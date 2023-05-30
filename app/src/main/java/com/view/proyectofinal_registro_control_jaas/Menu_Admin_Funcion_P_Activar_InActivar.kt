@@ -50,13 +50,12 @@ class Menu_Admin_Funcion_P_Activar_InActivar : AppCompatActivity() {
         var dato2: String
         var dato3: String
 
-        if (documento.isNotEmpty()) {
+        if (documento.isNotEmpty() && documento.matches(Regex("[0-9]*"))) {
 
             consultaUsuarios.document(documento).get().addOnSuccessListener {
                 println("Esta consultando el estudiante...")
 
                 if (it.exists()) {
-
 
                     dato1 = it.getString("Estado").toString()
                     dato2 = it.getString("Nombres").toString()
@@ -70,6 +69,7 @@ class Menu_Admin_Funcion_P_Activar_InActivar : AppCompatActivity() {
                     txtestado.setText(dato1)
                     txtnombres.setText(dato2)
                     txtusaurio.setText(dato3)
+
                 } else {
                     Toast.makeText(this, "Documento $documento no registrado", Toast.LENGTH_SHORT)
                         .show()
@@ -77,6 +77,7 @@ class Menu_Admin_Funcion_P_Activar_InActivar : AppCompatActivity() {
             }
         } else {
             Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
         }
 
 
@@ -93,7 +94,7 @@ class Menu_Admin_Funcion_P_Activar_InActivar : AppCompatActivity() {
         var usuario: String = txtusaurio.text.toString()
         var estado: String = txtestado.text.toString()
 
-        if (documento.isNotEmpty() && usuario.isNotEmpty()) {
+        if (documento.isNotEmpty() && usuario.isNotEmpty() && documento.matches(Regex("[0-9]*"))) {
             val datosActualizados = hashMapOf<String, Any>(
                 "Estado" to estado
             )
@@ -130,6 +131,7 @@ class Menu_Admin_Funcion_P_Activar_InActivar : AppCompatActivity() {
 
         } else {
             Toast.makeText(this, "Campo del documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
         }
     }
 }

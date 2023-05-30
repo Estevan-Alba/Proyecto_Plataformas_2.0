@@ -66,7 +66,17 @@ class Menu_Admin_Funcion_E_Consultar : AppCompatActivity() {
         var roles: String = txtrol.text.toString()
         var estado: String = txtestado.text.toString()
 
-        if(documento.isNotEmpty()){
+        if(documento.isNotEmpty()
+            && nombres.isNotEmpty()
+            && apellido.isNotEmpty()
+            && edad.isNotEmpty()
+            && direccion.isNotEmpty()
+            && telefono.isNotEmpty()
+            && usuario.isNotEmpty()
+            && contraseña.isNotEmpty()
+            && roles.isNotEmpty()
+            && estado.isNotEmpty()
+            && documento.matches(Regex("[0-9]*"))){
 
             val datosActualizados = hashMapOf<String, Any>(
                 "Documento" to documento,
@@ -101,7 +111,9 @@ class Menu_Admin_Funcion_E_Consultar : AppCompatActivity() {
                     Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
                 }
         }else{
-            Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Campos requeridos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
+
         }
     }
 
@@ -123,7 +135,7 @@ class Menu_Admin_Funcion_E_Consultar : AppCompatActivity() {
         var dato8: String
         var dato9: String
 
-        if(documento.isNotEmpty()){
+        if(documento.isNotEmpty() && documento.matches(Regex("[0-9]*"))){
 
             consultaUsuarios.document(documento).get().addOnSuccessListener {
                 println("Esta consultando el estudiante...")
@@ -165,6 +177,8 @@ class Menu_Admin_Funcion_E_Consultar : AppCompatActivity() {
             }
         }else{
             Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
+
         }
     }
 }
