@@ -66,38 +66,43 @@ class Menu_Admin_Funcion_E_Consultar : AppCompatActivity() {
         var roles: String = txtrol.text.toString()
         var estado: String = txtestado.text.toString()
 
-        val datosActualizados = hashMapOf<String, Any>(
-            "Documento" to documento,
-            "Nombres" to nombres,
-            "Apellidos" to apellido,
-            "Edad" to edad,
-            "Direccion" to direccion,
-            "Telefono" to telefono,
-            "Usuario" to usuario,
-            "Contraseña" to contraseña,
-            "Rol" to roles,
-            "Estado" to estado
-        )
+        if(documento.isNotEmpty()){
 
-        actualizarUsuarios.document(documento).update(datosActualizados)
+            val datosActualizados = hashMapOf<String, Any>(
+                "Documento" to documento,
+                "Nombres" to nombres,
+                "Apellidos" to apellido,
+                "Edad" to edad,
+                "Direccion" to direccion,
+                "Telefono" to telefono,
+                "Usuario" to usuario,
+                "Contraseña" to contraseña,
+                "Rol" to roles,
+                "Estado" to estado
+            )
 
-            .addOnSuccessListener {
-                Toast.makeText(this, "Datos Actualizados correctamente", Toast.LENGTH_SHORT).show()
-                txtdocumento.text.clear()
-                txtnombres.text.clear()
-                txtapellidos.text.clear()
-                txtedad.text.clear()
-                txtdireccion.text.clear()
-                txttelefono.text.clear()
-                txtusaurio.text.clear()
-                txtcontraseña.text.clear()
-                txtrol.text.clear()
-                txtestado.text.clear()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
-            }
+            actualizarUsuarios.document(documento).update(datosActualizados)
 
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Datos Actualizados correctamente", Toast.LENGTH_SHORT).show()
+
+                    txtdocumento.text.clear()
+                    txtnombres.text.clear()
+                    txtapellidos.text.clear()
+                    txtedad.text.clear()
+                    txtdireccion.text.clear()
+                    txttelefono.text.clear()
+                    txtusaurio.text.clear()
+                    txtcontraseña.text.clear()
+                    txtrol.text.clear()
+                    txtestado.text.clear()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
+                }
+        }else{
+            Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun consultarEstudiante() {
@@ -118,44 +123,48 @@ class Menu_Admin_Funcion_E_Consultar : AppCompatActivity() {
         var dato8: String
         var dato9: String
 
+        if(documento.isNotEmpty()){
 
-        consultaUsuarios.document(documento).get().addOnSuccessListener {
-            println("Esta consultando el estudiante...")
+            consultaUsuarios.document(documento).get().addOnSuccessListener {
+                println("Esta consultando el estudiante...")
 
-            if (it.exists()) {
+                if (it.exists()) {
 
+                    dato1 = it.getString("Apellidos").toString()
+                    dato2 = it.getString("Contraseña").toString()
+                    dato3 = it.getString("Direccion").toString()
+                    dato4 = it.getString("Edad").toString()
+                    dato5 = it.getString("Estado").toString()
+                    dato6 = it.getString("Nombres").toString()
+                    dato7 = it.getString("Rol").toString()
+                    dato8 = it.getString("Telefono").toString()
+                    dato9 = it.getString("Usuario").toString()
 
-                dato1 = it.getString("Apellidos").toString()
-                dato2 = it.getString("Contraseña").toString()
-                dato3 = it.getString("Direccion").toString()
-                dato4 = it.getString("Edad").toString()
-                dato5 = it.getString("Estado").toString()
-                dato6 = it.getString("Nombres").toString()
-                dato7 = it.getString("Rol").toString()
-                dato8 = it.getString("Telefono").toString()
-                dato9 = it.getString("Usuario").toString()
+                    val txtnombres: EditText = findViewById(R.id.NOMBRE)
+                    val txtapellidos: EditText = findViewById(R.id.APELLIDO)
+                    val txtedad: EditText = findViewById(R.id.EDAD)
+                    val txtdireccion: EditText = findViewById(R.id.DIRECCION)
+                    val txttelefono: EditText = findViewById(R.id.TELEFONO)
+                    val txtusaurio: EditText = findViewById(R.id.USUARIO)
+                    val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
+                    val txtrol: EditText = findViewById(R.id.ROL)
+                    val txtestado: EditText = findViewById(R.id.ESTADO)
 
-                val txtnombres: EditText = findViewById(R.id.NOMBRE)
-                val txtapellidos: EditText = findViewById(R.id.APELLIDO)
-                val txtedad: EditText = findViewById(R.id.EDAD)
-                val txtdireccion: EditText = findViewById(R.id.DIRECCION)
-                val txttelefono: EditText = findViewById(R.id.TELEFONO)
-                val txtusaurio: EditText = findViewById(R.id.USUARIO)
-                val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
-                val txtrol: EditText = findViewById(R.id.ROL)
-                val txtestado: EditText = findViewById(R.id.ESTADO)
-
-                txtapellidos.setText(dato1)
-                txtcontraseña.setText(dato2)
-                txtdireccion.setText(dato3)
-                txtedad.setText(dato4)
-                txtestado.setText(dato5)
-                txtnombres.setText(dato6)
-                txtrol.setText(dato7)
-                txttelefono.setText(dato8)
-                txtusaurio.setText(dato9)
+                    txtapellidos.setText(dato1)
+                    txtcontraseña.setText(dato2)
+                    txtdireccion.setText(dato3)
+                    txtedad.setText(dato4)
+                    txtestado.setText(dato5)
+                    txtnombres.setText(dato6)
+                    txtrol.setText(dato7)
+                    txttelefono.setText(dato8)
+                    txtusaurio.setText(dato9)
+                }else{
+                    Toast.makeText(this, "El documento $documento no se encuentra registrado", Toast.LENGTH_SHORT).show()
+                }
             }
+        }else{
+            Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
         }
-
     }
 }
