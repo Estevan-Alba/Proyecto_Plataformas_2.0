@@ -35,7 +35,7 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
         val botonIrAtras: Button = findViewById(R.id.ATRASDO)
 
         botonIrAtras.setOnClickListener {
-            val intent = Intent(this, Fragment_Admin_M_P::class.java)
+            val intent = Intent(this, Menu_Admin::class.java)
             startActivity(intent)
         }
 

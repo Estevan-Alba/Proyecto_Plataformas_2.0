@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 
-class Fragment_Admin_M_E : Fragment(R.layout.fragment__admin__m_e) {
+class Fragment_Admin_M_E: Fragment(R.layout.fragment__admin__m_e) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
