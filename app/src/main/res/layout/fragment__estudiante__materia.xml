@@ -137,7 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
-                    android:backgroundTint="@drawable/fondo_secundarioo"/>
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -238,7 +238,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
-                    android:backgroundTint="@drawable/fondo_secundarioo"/>
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear3"
@@ -338,7 +338,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
-                    android:backgroundTint="@drawable/fondo_secundarioo"/>
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear4"
@@ -438,7 +438,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
-                    android:backgroundTint="@drawable/fondo_secundarioo"/>
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear5"
@@ -538,7 +538,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
-                    android:backgroundTint="@drawable/fondo_secundarioo"/>
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear6"
@@ -638,7 +638,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
-                    android:backgroundTint="@drawable/fondo_secundarioo"/>
+                    />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
