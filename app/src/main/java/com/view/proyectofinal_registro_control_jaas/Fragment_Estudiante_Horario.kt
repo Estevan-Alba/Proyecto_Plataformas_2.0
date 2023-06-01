@@ -1,59 +1,59 @@
 package com.view.proyectofinal_registro_control_jaas
 import android.os.Bundle
 import android.view.View
+import android.widget.TableLayout
+import android.widget.TableRow
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import org.apache.poi.EncryptedDocumentException
 import org.apache.poi.ss.usermodel.WorkbookFactory
 import java.io.FileInputStream
+import java.io.IOException
+import java.io.InputStream
 
 class Fragment_Estudiante_Horario : Fragment(R.layout.fragment__estudiante__horario) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // RUTA DE ARCHIVO
-        //val filePath = "C:\\Users\\jose3\\AndroidStudioProjects\\Proyecto_Plataformas_2.0\\app\\src\\main\\res\\drawable\\HORARIO ESTUDIANTE.xlsx"
-        val filePath = "assets\\HORARIO ESTUDIANTE.xlsx"
+        val fileInputStream = FileInputStream("C:\\Users\\julia\\Desktop\\IX\\Ejercicio cargue excel Kotlin.xlsx")
+        val tableLayout = view.findViewById<TableLayout>(R.id.tableLayout)
+
         try {
-            // Crear un FileInputStream para leer el archivo Excel
-            val fis = FileInputStream(filePath)
+            println("Ya se ve el horario")
+            val inputStream: InputStream = requireContext().applicationContext.assets.open(fileInputStream)
+            try {
 
-            // Crear un Workbook a partir del FileInputStream
-            val workbook = WorkbookFactory.create(fis)
+                val workbook = WorkbookFactory.create(InputStream)
+                val sheet = workbook.getSheetAt(0) // Obtén la primera hoja del archivo
 
-            // Obtener la hoja de trabajo deseada (por índice o nombre)
-            val sheet = workbook.getSheetAt(0) // Obtener la primera hoja de trabajo
+                // Itera a través de las filas y columnas de la hoja
+                for (rowIndex in 0 until sheet.physicalNumberOfRows) {
+                    val row = sheet.getRow(rowIndex)
 
-            // Crear una lista para almacenar los valores del archivo Excel
-            val dataList = ArrayList<String>()
+                    val tableRow = TableRow(tableLayout.context)
 
-            // Recorrer las filas de la hoja de trabajo
-            for (row in sheet) {
-                // Recorrer las celdas de cada fila
-                for (cell in row) {
-                    // Obtener el valor de la celda como String
-                    val cellValue = cell.toString()
-                    // Agregar el valor a la lista
-                    dataList.add(cellValue)
+                    // Itera a través de las celdas de la fila actual
+                    for (cellIndex in 0 until row.physicalNumberOfCells) {
+                        val cell = row.getCell(cellIndex)
+
+                        val textView = TextView(tableLayout.context)
+                        textView.text = cell?.toString()
+                        tableRow.addView(textView)
+                    }
+
+                    tableLayout.addView(tableRow)
                 }
+
+                workbook.close()
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
 
-            // Cerrar el FileInputStream y liberar recursos
-            fis.close()
-
-            // Obtener el RecyclerView del diseño
-            val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-
-            // Crear un adaptador para el RecyclerView y asignarlo
-            val adapter = ExcelAdapter(dataList)
-            recyclerView.adapter = adapter
-
-            // Configurar el diseño del RecyclerView
-            val layoutManager = LinearLayoutManager(requireContext())
-            recyclerView.layoutManager = layoutManager
-
-        } catch (e: Exception) {
-            print("No se pudo leer el excel")
+        } catch (e: IOException) {
+            println("No se pudo leer el documento")
+            e.printStackTrace()
+        } catch (e: EncryptedDocumentException) {
+            println("El archivo Excel está encriptado")
             e.printStackTrace()
         }
     }
