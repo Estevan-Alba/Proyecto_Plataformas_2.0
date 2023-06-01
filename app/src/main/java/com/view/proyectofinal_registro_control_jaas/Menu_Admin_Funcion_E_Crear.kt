@@ -71,35 +71,53 @@ class Menu_Admin_Funcion_E_Crear : AppCompatActivity() {
                     + "Rol: $roles"
         )
 
-        auth.createUserWithEmailAndPassword(usuario, contraseña).addOnCompleteListener(this) {
 
-            if (it.isSuccessful) {
+        if (   documento.isNotEmpty()
+            && nombres.isNotEmpty()
+            && apellido.isNotEmpty()
+            && edad.isNotEmpty()
+            && direccion.isNotEmpty()
+            && telefono.isNotEmpty()
+            && usuario.isNotEmpty()
+            && contraseña.isNotEmpty()
+            && roles.isNotEmpty()
+            && estado.isNotEmpty()
+            && documento.matches(Regex("[0-9]*"))
+        ) {
 
-                registrarBD(
-                    documento,
-                    nombres,
-                    apellido,
-                    edad,
-                    direccion,
-                    telefono,
-                    usuario,
-                    contraseña,
-                    roles,
-                    estado
-                )
+            auth.createUserWithEmailAndPassword(usuario, contraseña).addOnCompleteListener(this) {
 
-                Toast.makeText(this, "Correo $usuario registrado exitosamente", Toast.LENGTH_SHORT)
-                    .show()
-                println("Usuario creado con exito")
+                if (it.isSuccessful) {
 
-                val intent = Intent(this, Menu_Login::class.java)
-                startActivity(intent)
+                    registrarBD(
+                        documento,
+                        nombres,
+                        apellido,
+                        edad,
+                        direccion,
+                        telefono,
+                        usuario,
+                        contraseña,
+                        roles,
+                        estado
+                    )
 
-            } else {
-                Toast.makeText(this, "Correo $usuario ya registrado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Correo $usuario registrado exitosamente", Toast.LENGTH_SHORT)
+                        .show()
+                    println("Usuario creado con exito")
+
+                    val intent = Intent(this, Menu_Login::class.java)
+                    startActivity(intent)
+
+                } else {
+                    Toast.makeText(this, "Correo $usuario ya registrado", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
 
+        }else{
+            Toast.makeText(this, "Campos requeridos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun registrarBD(

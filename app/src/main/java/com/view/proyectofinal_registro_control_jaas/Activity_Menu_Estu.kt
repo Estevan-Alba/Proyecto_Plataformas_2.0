@@ -32,7 +32,7 @@ class Activity_Menu_Estu : AppCompatActivity(), NavigationView.OnNavigationItemS
         supportActionBar?.setHomeButtonEnabled(true)
 
         supportFragmentManager.commit {
-            replace<Fragment_Bienvenida>(R.id.contenedorfracmento)
+            replace<Fragment_Bienvenida>(R.id.contenedorfracmentooes)
             setReorderingAllowed(true)
             addToBackStack("replacement")
         }
@@ -51,7 +51,8 @@ class Activity_Menu_Estu : AppCompatActivity(), NavigationView.OnNavigationItemS
                 }
             }
             R.id.nav_item2 -> {
-
+                val intent = Intent(this, Activity_Mostrar_Horario::class.java)
+                startActivity(intent)
             }
             R.id.nav_item3 -> {
                 val intent = Intent(this, Menu_Login::class.java)

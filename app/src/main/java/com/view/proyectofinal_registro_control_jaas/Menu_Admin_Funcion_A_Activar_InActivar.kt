@@ -53,27 +53,34 @@ class Menu_Admin_Funcion_A_Activar_InActivar : AppCompatActivity() {
         var dato2: String
         var dato3: String
 
-        consultaUsuarios.document(documento).get().addOnSuccessListener {
-            println("Esta consultando el estudiante...")
+        if(documento.isNotEmpty() && documento.matches(Regex("[0-9]*"))){
 
-            if (it.exists()) {
+            consultaUsuarios.document(documento).get().addOnSuccessListener {
+                println("Esta consultando el estudiante...")
 
-
-                dato1 = it.getString("Estado").toString()
-                dato2 = it.getString("Nombres").toString()
-                dato3 = it.getString("Usuario").toString()
-
-                val txtnombres: EditText = findViewById(R.id.NOMBRE)
-                val txtusaurio: EditText = findViewById(R.id.USUARIO)
-                val txtestado: EditText = findViewById(R.id.ESTADO)
+                if (it.exists()) {
 
 
-                txtestado.setText(dato1)
-                txtnombres.setText(dato2)
-                txtusaurio.setText(dato3)
+                    dato1 = it.getString("Estado").toString()
+                    dato2 = it.getString("Nombres").toString()
+                    dato3 = it.getString("Usuario").toString()
+
+                    val txtnombres: EditText = findViewById(R.id.NOMBRE)
+                    val txtusaurio: EditText = findViewById(R.id.USUARIO)
+                    val txtestado: EditText = findViewById(R.id.ESTADO)
+
+
+                    txtestado.setText(dato1)
+                    txtnombres.setText(dato2)
+                    txtusaurio.setText(dato3)
+                }else{
+                    Toast.makeText(this, "Documento $documento no registrado", Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
+        }else{
+            Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     private fun actualizarEstado() {
@@ -87,35 +94,40 @@ class Menu_Admin_Funcion_A_Activar_InActivar : AppCompatActivity() {
         var usuario: String = txtusaurio.text.toString()
         var estado: String = txtestado.text.toString()
 
-        val datosActualizados = hashMapOf<String, Any>(
-            "Estado" to estado
-        )
+        if(documento.isNotEmpty() && documento.matches(Regex("[0-9]*"))){
 
-        actualizarEstadoUsuarios.document(documento).update(datosActualizados)
+            val datosActualizados = hashMapOf<String, Any>(
+                "Estado" to estado
+            )
 
-            .addOnSuccessListener {
-                Toast.makeText(this, "Estado Actualizado correctamente", Toast.LENGTH_SHORT).show()
-                txtdocumento.text.clear()
-                txtnombres.text.clear()
-                txtusaurio.text.clear()
-                txtestado.text.clear()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
-            }
+            actualizarEstadoUsuarios.document(documento).update(datosActualizados)
 
-        ActualizarEstadoCorreos.document(usuario).update(datosActualizados)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Estado Actualizado correctamente", Toast.LENGTH_SHORT).show()
+                    txtdocumento.text.clear()
+                    txtnombres.text.clear()
+                    txtusaurio.text.clear()
+                    txtestado.text.clear()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
+                }
 
-            .addOnSuccessListener {
-                Toast.makeText(this, "Estado Actualizado correctamente", Toast.LENGTH_SHORT).show()
-                txtdocumento.text.clear()
-                txtnombres.text.clear()
-                txtusaurio.text.clear()
-                txtestado.text.clear()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
-            }
+            ActualizarEstadoCorreos.document(usuario).update(datosActualizados)
 
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Estado Actualizado correctamente", Toast.LENGTH_SHORT).show()
+                    txtdocumento.text.clear()
+                    txtnombres.text.clear()
+                    txtusaurio.text.clear()
+                    txtestado.text.clear()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
+                }
+        }else{
+            Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
+        }
     }
 }

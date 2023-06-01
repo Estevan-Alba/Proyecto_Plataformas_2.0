@@ -25,10 +25,17 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
         val spinner: Spinner = findViewById(R.id.MATERIA)
 
         // Crea un ArrayAdapter utilizando un arreglo de opciones
-        val opciones = arrayOf("Fundamento Matemático", "Física I", "Lógica Matemática", "Introducción a la Ingeniería", "Algoritmia", "Técnicas de Lectura y Escritua", "Vida Universitaria")
+        val opciones = arrayOf(
+            "Fundamento Matemático",
+            "Física I",
+            "Lógica Matemática",
+            "Introducción a la Ingeniería",
+            "Algoritmia",
+            "Técnicas de Lectura y Escritua",
+            "Vida Universitaria"
+        )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
         spinner.adapter = adapter
-
 
 
         val botonCrearEstudiante: Button = findViewById(R.id.registar)
@@ -58,10 +65,9 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
         val txtusaurio: EditText = findViewById(R.id.USUARIO)
         val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
         val txtrol: EditText = findViewById(R.id.ROL)
-        val txtmateria:Spinner = findViewById(R.id.MATERIA)
+        val txtmateria: Spinner = findViewById(R.id.MATERIA)
         val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
         val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
-
 
 
         var documento: String = txtdocumento.text.toString()
@@ -76,7 +82,6 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
         var materia: String = txtmateria.selectedItem.toString()
         var experiencia: String = txtexperiencia.text.toString()
         var universidad: String = txtuniversidad.text.toString()
-
 
         var estado = "Activo"
 
@@ -96,38 +101,63 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
                     + "Universidad: $universidad"
         )
 
-        auth.createUserWithEmailAndPassword(usuario, contraseña).addOnCompleteListener(this) {
+        if (   documento.isNotEmpty()
+            && nombres.isNotEmpty()
+            && apellido.isNotEmpty()
+            && edad.isNotEmpty()
+            && direccion.isNotEmpty()
+            && telefono.isNotEmpty()
+            && usuario.isNotEmpty()
+            && contraseña.isNotEmpty()
+            && roles.isNotEmpty()
+            && estado.isNotEmpty()
+            && materia.isNotEmpty()
+            && experiencia.isNotEmpty()
+            && universidad.isNotEmpty()
+            && documento.matches(Regex("[0-9]*"))
+        ) {
 
-            if (it.isSuccessful) {
+            auth.createUserWithEmailAndPassword(usuario, contraseña).addOnCompleteListener(this) {
 
-                registrarBD(
-                    documento,
-                    nombres,
-                    apellido,
-                    edad,
-                    direccion,
-                    telefono,
-                    usuario,
-                    contraseña,
-                    roles,
-                    estado,
-                    materia,
-                    experiencia,
-                    universidad
+                if (it.isSuccessful) {
 
-                )
+                    registrarBD(
+                        documento,
+                        nombres,
+                        apellido,
+                        edad,
+                        direccion,
+                        telefono,
+                        usuario,
+                        contraseña,
+                        roles,
+                        estado,
+                        materia,
+                        experiencia,
+                        universidad
+                    )
 
-                Toast.makeText(this, "Correo $usuario registrado exitosamente", Toast.LENGTH_SHORT)
-                    .show()
-                println("Usuario creado con exito")
+                    Toast.makeText(
+                        this,
+                        "Correo $usuario registrado exitosamente",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
 
-                val intent = Intent(this, Menu_Login::class.java)
-                startActivity(intent)
+                    val intent = Intent(this, Menu_Login::class.java)
+                    startActivity(intent)
 
-            } else {
-                Toast.makeText(this, "Correo $usuario ya registrado", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Correo $usuario ya registrado", Toast.LENGTH_SHORT).show()
+                }
             }
+
+        } else {
+
+            Toast.makeText(this, "Campos requeridos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
         }
+
 
     }
 
@@ -157,7 +187,8 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
                 Toast.makeText(this, "Datos registrados", Toast.LENGTH_SHORT).show()
 
             } else {
-                Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
@@ -183,7 +214,8 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
                 Toast.makeText(this, "Datos registrados", Toast.LENGTH_SHORT).show()
 
             } else {
-                Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
