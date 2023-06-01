@@ -6,6 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 22/04/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
+
 class ExcelAdapter(private val dataList: ArrayList<String>) : RecyclerView.Adapter<ExcelAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

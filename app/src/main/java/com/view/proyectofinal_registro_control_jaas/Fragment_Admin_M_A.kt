@@ -8,8 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 04/05/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
 
 class Fragment_Admin_M_A : Fragment(R.layout.fragment__admin__m__a) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

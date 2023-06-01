@@ -13,6 +13,12 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.google.android.material.navigation.NavigationView
 
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 15/05/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
+
 class Activity_Menu_Estu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
 
     private lateinit var drawer: DrawerLayout

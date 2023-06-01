@@ -7,6 +7,12 @@ import android.widget.MediaController
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 15/05/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
+
 class Activity_Estudiante_Video : AppCompatActivity() {
 
     private lateinit var videoView: VideoView

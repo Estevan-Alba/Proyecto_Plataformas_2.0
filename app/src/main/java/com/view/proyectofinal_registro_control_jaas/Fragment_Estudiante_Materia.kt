@@ -6,6 +6,12 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import android.view.View
 
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 04/05/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
+
 
 class Fragment_Estudiante_Materia : Fragment(R.layout.fragment__estudiante__materia) {
 

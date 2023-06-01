@@ -45,7 +45,7 @@
         <EditText
             android:id="@+id/materia1"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -71,7 +71,7 @@
         <EditText
             android:id="@+id/profesor1"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="5dp"
@@ -97,7 +97,7 @@
         <EditText
             android:id="@+id/detalle1"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="5dp"
@@ -118,9 +118,5 @@
             android:text="ir al salon"
             />
     </LinearLayout>
-
-
-
-
 
 </FrameLayout>

@@ -9,6 +9,11 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 22/04/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
 
 class MainActivity : AppCompatActivity() {
 
