@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo_secundario"
     tools:context=".Fragment_Estudiante_Materia"
-    android:background="@drawable/fondo_principal"
+
     >
 
     <TextView
@@ -129,6 +130,7 @@
                     android:inputType="text"/>
 
                 <Button
+                    android:id="@+id/boton1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
@@ -229,6 +231,7 @@
                     android:inputType="text"/>
 
                 <Button
+                    android:id="@+id/boton2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
@@ -328,6 +331,7 @@
                     android:inputType="text"/>
 
                 <Button
+                    android:id="@+id/boton3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
@@ -427,6 +431,7 @@
                     android:inputType="text"/>
 
                 <Button
+                    android:id="@+id/boton4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
@@ -526,6 +531,7 @@
                     android:inputType="text"/>
 
                 <Button
+                    android:id="@+id/boton5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
@@ -625,18 +631,12 @@
                     android:inputType="text"/>
 
                 <Button
+                    android:id="@+id/boton6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="ir al salon"
                     android:backgroundTint="@drawable/fondo_secundarioo"/>
             </LinearLayout>
-
-
-
-
         </LinearLayout>
-
-
-
     </ScrollView>
 </FrameLayout>
