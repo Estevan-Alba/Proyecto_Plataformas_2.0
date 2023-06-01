@@ -21,7 +21,7 @@ class Activity_Estudiante_Video : AppCompatActivity() {
 
         btnPlayVideo.setOnClickListener {
             // Ruta del archivo de video en la carpeta res/raw
-            val videoPath = "android.resource://" + packageName + "/" + R.raw.nombre_del_video
+            val videoPath = "android.resource://" + packageName + "/" + R.raw.prueba
 
             val videoUri = Uri.parse(videoPath)
             videoView.setVideoURI(videoUri)
@@ -32,5 +32,5 @@ class Activity_Estudiante_Video : AppCompatActivity() {
             // Iniciar la reproducción del video
             videoView.start()
         }
-
+    }
 }
