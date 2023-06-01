@@ -6,22 +6,28 @@ import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import org.apache.poi.ss.usermodel.WorkbookFactory
-import java.io.File
-import java.io.FileInputStream
+import java.io.IOException
+import java.io.InputStream
 
 class Activity_Mostrar_Horario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_horario)
 
-        val filePath = " app/src/main/assets/HORARIO ESTUDIANTE.xlsx"
+        val fileName = "assets/HORARIO ESTUDIANTE.xlsx"
         val tableLayout = findViewById<TableLayout>(R.id.tableLayout)
-        readExcelFile(filePath, tableLayout)
+
+        try {
+            val inputStream: InputStream = assets.open(fileName)
+            readExcelFile(inputStream, tableLayout)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
     }
 
-    fun readExcelFile(filePath: String, tableLayout: TableLayout) {
+    fun readExcelFile(filePath: InputStream, tableLayout: TableLayout) {
         try {
-            val workbook = WorkbookFactory.create(FileInputStream(File(filePath)))
+            val workbook = WorkbookFactory.create(filePath)
             val sheet = workbook.getSheetAt(0) // Obtén la primera hoja del archivo
 
             // Itera a través de las filas y columnas de la hoja
