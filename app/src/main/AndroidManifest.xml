@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ProyectoFinal_RegistroControl_JAAS"
         tools:targetApi="31">
         <activity
+            android:name=".Fragment_Estudiante_Materia"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Estudiante_Video"
+            android:exported="false" />
+        <activity
             android:name=".Activity_Mostrar_Horario"
             android:exported="false" />
         <activity
@@ -78,6 +84,7 @@
         <activity
             android:name=".Fragment_Admin_M_P"
             android:exported="false" />
+
     </application>
 
 </manifest>
