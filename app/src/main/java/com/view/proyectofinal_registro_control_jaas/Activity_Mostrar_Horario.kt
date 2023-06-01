@@ -10,6 +10,12 @@ import org.apache.poi.ss.usermodel.WorkbookFactory
 import java.io.FileNotFoundException
 import java.io.IOException
 
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 15/05/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
+
 class Activity_Mostrar_Horario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

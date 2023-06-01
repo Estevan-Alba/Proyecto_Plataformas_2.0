@@ -11,6 +11,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 27/04/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
 
 class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
 
@@ -142,9 +147,17 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     )
                         .show()
-
-                    val intent = Intent(this, Menu_Login::class.java)
-                    startActivity(intent)
+                    txtdocumento.text.clear()
+                    txtnombres.text.clear()
+                    txtapellidos.text.clear()
+                    txtedad.text.clear()
+                    txtdireccion.text.clear()
+                    txttelefono.text.clear()
+                    txtusaurio.text.clear()
+                    txtcontraseña.text.clear()
+                    txtrol.text.clear()
+                    txtexperiencia.text.clear()
+                    txtuniversidad.text.clear()
 
                 } else {
                     Toast.makeText(this, "Correo $usuario ya registrado", Toast.LENGTH_SHORT).show()

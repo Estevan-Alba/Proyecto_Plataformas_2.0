@@ -10,6 +10,12 @@ import android.widget.Spinner
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 
+/*
+* Autor: Andres Silva y Julian Alba
+* Fecha: 27/04/2023
+* Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
+* */
+
 class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()

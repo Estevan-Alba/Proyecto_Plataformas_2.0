@@ -19,6 +19,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 * Comentarios: Desarrollo de proyecto para la asignatura de plataformas.
 * */
 
+
+
 class Menu_Login : AppCompatActivity() {
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
