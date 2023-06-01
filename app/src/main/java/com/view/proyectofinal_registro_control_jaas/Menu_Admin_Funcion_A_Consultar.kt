@@ -75,55 +75,69 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         var experiencia: String = txtexperiencia.text.toString()
         var universidad: String = txtuniversidad.text.toString()
 
-        val datosActualizados = hashMapOf<String, Any>(
-            "Documento" to documento,
-            "Nombres" to nombres,
-            "Apellidos" to apellido,
-            "Edad" to edad,
-            "Direccion" to direccion,
-            "Telefono" to telefono,
-            "Usuario" to usuario,
-            "Contraseña" to contraseña,
-            "Rol" to roles,
-            "Estado" to estado,
-            "Cargo" to cargo,
-            "Facultad" to facultad,
-            "Experiencia" to experiencia,
-            "Universidad" to universidad
-        )
+        if(documento.isNotEmpty()
+            && nombres.isNotEmpty()
+            && apellido.isNotEmpty()
+            && edad.isNotEmpty()
+            && direccion.isNotEmpty()
+            && telefono.isNotEmpty()
+            && usuario.isNotEmpty()
+            && contraseña.isNotEmpty()
+            && roles.isNotEmpty()
+            && estado.isNotEmpty()
+            && experiencia.isNotEmpty()
+            && universidad.isNotEmpty()
+            && documento.matches(Regex("[0-9]*"))){
 
-        actualizarUsuarios.document(documento).update(datosActualizados)
+            val datosActualizados = hashMapOf<String, Any>(
+                "Documento" to documento,
+                "Nombres" to nombres,
+                "Apellidos" to apellido,
+                "Edad" to edad,
+                "Direccion" to direccion,
+                "Telefono" to telefono,
+                "Usuario" to usuario,
+                "Contraseña" to contraseña,
+                "Rol" to roles,
+                "Estado" to estado,
+                "Cargo" to cargo,
+                "Facultad" to facultad,
+                "Experiencia" to experiencia,
+                "Universidad" to universidad
+            )
+            actualizarUsuarios.document(documento).update(datosActualizados)
 
-            .addOnSuccessListener {
-                Toast.makeText(this, "Datos Actualizados correctamente", Toast.LENGTH_SHORT).show()
-                txtdocumento.text.clear()
-                txtnombres.text.clear()
-                txtapellidos.text.clear()
-                txtedad.text.clear()
-                txtdireccion.text.clear()
-                txttelefono.text.clear()
-                txtusaurio.text.clear()
-                txtcontraseña.text.clear()
-                txtrol.text.clear()
-                txtestado.text.clear()
-                txtcargo.text.clear()
-                txtfacultad.text.clear()
-                txtexperiencia.text.clear()
-                txtuniversidad.text.clear()
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Datos Actualizados correctamente", Toast.LENGTH_SHORT).show()
+                    txtdocumento.text.clear()
+                    txtnombres.text.clear()
+                    txtapellidos.text.clear()
+                    txtedad.text.clear()
+                    txtdireccion.text.clear()
+                    txttelefono.text.clear()
+                    txtusaurio.text.clear()
+                    txtcontraseña.text.clear()
+                    txtrol.text.clear()
+                    txtestado.text.clear()
+                    txtcargo.text.clear()
+                    txtfacultad.text.clear()
+                    txtexperiencia.text.clear()
+                    txtuniversidad.text.clear()
+                }
 
+                .addOnFailureListener {
+                    Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
+                }
+        }else{
+            Toast.makeText(this, "Campos requeridos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
 
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "No se pudo actualizar los datos", Toast.LENGTH_SHORT).show()
-            }
-
+        }
     }
 
     private fun consultarEstudiante() {
-
         val txtdocumento: EditText = findViewById(R.id.DOCUMENTO)
         val documento: String = txtdocumento.text.toString()
-
 
         var dato1: String
         var dato2: String
@@ -141,56 +155,63 @@ class Menu_Admin_Funcion_A_Consultar : AppCompatActivity() {
         var dato14: String
 
 
-        consultaUsuarios.document(documento).get().addOnSuccessListener {
-            println("Esta consultando el estudiante...")
+        if(documento.isNotEmpty() && documento.matches(Regex("[0-9]*")) ){
 
-            if (it.exists()) {
+            consultaUsuarios.document(documento).get().addOnSuccessListener {
+                println("Esta consultando el estudiante...")
+
+                if (it.exists()) {
+
+                    dato1 = it.getString("Apellidos").toString()
+                    dato2 = it.getString("Cargo").toString()
+                    dato3 = it.getString("Contraseña").toString()
+                    dato4 = it.getString("Direccion").toString()
+                    dato5 = it.getString("Edad").toString()
+                    dato6 = it.getString("Estado").toString()
+                    dato7 = it.getString("Experiencia").toString()
+                    dato8 = it.getString("Facultad").toString()
+                    dato9 = it.getString("Nombres").toString()
+                    dato10 = it.getString("Rol").toString()
+                    dato11= it.getString("Telefono").toString()
+                    dato12 = it.getString("Universidad").toString()
+                    dato13= it.getString("Usuario").toString()
 
 
-                dato1 = it.getString("Apellidos").toString()
-                dato2 = it.getString("Cargo").toString()
-                dato3 = it.getString("Contraseña").toString()
-                dato4 = it.getString("Direccion").toString()
-                dato5 = it.getString("Edad").toString()
-                dato6 = it.getString("Estado").toString()
-                dato7 = it.getString("Experiencia").toString()
-                dato8 = it.getString("Facultad").toString()
-                dato9 = it.getString("Nombres").toString()
-                dato10 = it.getString("Rol").toString()
-                dato11= it.getString("Telefono").toString()
-                dato12 = it.getString("Universidad").toString()
-                dato13= it.getString("Usuario").toString()
+                    val txtnombres: EditText = findViewById(R.id.NOMBRE)
+                    val txtapellidos: EditText = findViewById(R.id.APELLIDO)
+                    val txtedad: EditText = findViewById(R.id.EDAD)
+                    val txtdireccion: EditText = findViewById(R.id.DIRECCION)
+                    val txttelefono: EditText = findViewById(R.id.TELEFONO)
+                    val txtusaurio: EditText = findViewById(R.id.USUARIO)
+                    val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
+                    val txtrol: EditText = findViewById(R.id.ROL)
+                    val txtestado: EditText = findViewById(R.id.ESTADO)
+                    val txtcargo: EditText = findViewById(R.id.cargo)
+                    val txtfacultad: EditText = findViewById(R.id.facultad)
+                    val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
+                    val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
 
-
-                val txtnombres: EditText = findViewById(R.id.NOMBRE)
-                val txtapellidos: EditText = findViewById(R.id.APELLIDO)
-                val txtedad: EditText = findViewById(R.id.EDAD)
-                val txtdireccion: EditText = findViewById(R.id.DIRECCION)
-                val txttelefono: EditText = findViewById(R.id.TELEFONO)
-                val txtusaurio: EditText = findViewById(R.id.USUARIO)
-                val txtcontraseña: EditText = findViewById(R.id.CONTRASEÑA)
-                val txtrol: EditText = findViewById(R.id.ROL)
-                val txtestado: EditText = findViewById(R.id.ESTADO)
-                val txtcargo: EditText = findViewById(R.id.cargo)
-                val txtfacultad: EditText = findViewById(R.id.facultad)
-                val txtexperiencia: EditText = findViewById(R.id.EXPERIENCIA)
-                val txtuniversidad: EditText = findViewById(R.id.UNIVERSIDAD)
-
-                txtapellidos.setText(dato1)
-                txtcargo.setText(dato2)
-                txtcontraseña.setText(dato3)
-                txtdireccion.setText(dato4)
-                txtedad.setText(dato5)
-                txtestado.setText(dato6)
-                txtexperiencia.setText(dato7)
-                txtfacultad.setText(dato8)
-                txtnombres.setText(dato9)
-                txtrol.setText(dato10)
-                txttelefono.setText(dato11)
-                txtuniversidad.setText(dato12)
-                txtusaurio.setText(dato13)
+                    txtapellidos.setText(dato1)
+                    txtcargo.setText(dato2)
+                    txtcontraseña.setText(dato3)
+                    txtdireccion.setText(dato4)
+                    txtedad.setText(dato5)
+                    txtestado.setText(dato6)
+                    txtexperiencia.setText(dato7)
+                    txtfacultad.setText(dato8)
+                    txtnombres.setText(dato9)
+                    txtrol.setText(dato10)
+                    txttelefono.setText(dato11)
+                    txtuniversidad.setText(dato12)
+                    txtusaurio.setText(dato13)
+                }else{
+                    Toast.makeText(this, "El documento $documento no se encuentra registrado", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
+        }else{
+            Toast.makeText(this, "Campo de documento requerido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Documento tiene que ser numerico", Toast.LENGTH_SHORT).show()
 
+        }
     }
 }
