@@ -56,6 +56,8 @@ class Activity_Menu_Estu : AppCompatActivity(), NavigationView.OnNavigationItemS
                     setReorderingAllowed(true)
                     addToBackStack("replacement")
                 }
+
+
             }
             R.id.nav_item3 -> {
                 val intent = Intent(this, Menu_Login::class.java)
