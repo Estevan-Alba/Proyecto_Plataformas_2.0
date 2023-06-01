@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,7 +43,7 @@
             <LinearLayout
                 android:id="@+id/linear1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
@@ -135,7 +136,7 @@
                 <Button
                     android:id="@+id/boton1"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="ir al salon"
                     />
             </LinearLayout>
@@ -143,7 +144,7 @@
             <LinearLayout
                 android:id="@+id/linear2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
@@ -236,14 +237,14 @@
                 <Button
                     android:id="@+id/boton2"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="ir al salon"
                     />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
@@ -336,14 +337,14 @@
                 <Button
                     android:id="@+id/boton3"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="ir al salon"
                     />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
@@ -436,14 +437,14 @@
                 <Button
                     android:id="@+id/boton4"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="ir al salon"
                     />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
@@ -536,14 +537,14 @@
                 <Button
                     android:id="@+id/boton5"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="ir al salon"
                     />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linear6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
@@ -636,11 +637,11 @@
                 <Button
                     android:id="@+id/boton6"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="ir al salon"
 
                     />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
