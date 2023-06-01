@@ -16,7 +16,7 @@
         <TextView
             android:id="@+id/textViewCellValue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="193dp"
             android:textSize="16sp" />
 
         <!-- Agrega aquí otros elementos de vista si es necesario -->

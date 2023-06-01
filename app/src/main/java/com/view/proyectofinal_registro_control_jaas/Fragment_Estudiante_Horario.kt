@@ -13,7 +13,7 @@ class Fragment_Estudiante_Horario : Fragment(R.layout.fragment__estudiante__hora
 
         // RUTA DE ARCHIVO
         //val filePath = "C:\\Users\\jose3\\AndroidStudioProjects\\Proyecto_Plataformas_2.0\\app\\src\\main\\res\\drawable\\HORARIO ESTUDIANTE.xlsx"
-        val filePath = " app/src/main/assets/HORARIO ESTUDIANTE.xlsx"
+        val filePath = "assets\\HORARIO ESTUDIANTE.xlsx"
         try {
             // Crear un FileInputStream para leer el archivo Excel
             val fis = FileInputStream(filePath)
@@ -53,6 +53,7 @@ class Fragment_Estudiante_Horario : Fragment(R.layout.fragment__estudiante__hora
             recyclerView.layoutManager = layoutManager
 
         } catch (e: Exception) {
+            print("No se pudo leer el excel")
             e.printStackTrace()
         }
     }
