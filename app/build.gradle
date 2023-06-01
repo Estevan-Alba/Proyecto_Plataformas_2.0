@@ -52,6 +52,9 @@ dependencies {
     //realizar el cargue del fragmento con excel
     implementation 'org.apache.poi:poi:5.2.0'
     implementation 'org.apache.poi:poi-ooxml:5.2.0'
+
+    implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'
+
     implementation 'androidx.recyclerview:recyclerview:1.3.0'
 
 

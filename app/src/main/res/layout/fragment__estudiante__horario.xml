@@ -1,5 +1,4 @@
 <androidx.constraintlayout.widget.ConstraintLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,55 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".Fragment_Estudiante_Horario">
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="392dp"
-        android:layout_height="308dp"
-        android:stretchColumns="*"
+    <Button
+        android:id="@+id/irAlHorario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver horario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219"
-        tools:ignore="MissingConstraints">
-
-        <TableRow
-            android:id="@+id/headerRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Día/Hora" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lunes" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Martes" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Miércoles" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jueves" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Viernes" />
-        </TableRow>
-    </TableLayout>
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
