@@ -11,6 +11,7 @@
         android:icon="@mipmap/iconojuan"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/iconojuan"
+
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal_RegistroControl_JAAS"
         tools:targetApi="31">
