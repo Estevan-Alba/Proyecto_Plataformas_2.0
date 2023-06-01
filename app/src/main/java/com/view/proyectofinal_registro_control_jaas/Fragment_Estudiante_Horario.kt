@@ -11,8 +11,6 @@ class Fragment_Estudiante_Horario : Fragment(R.layout.fragment__estudiante__hora
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         // RUTA DE ARCHIVO
         //val filePath = "C:\\Users\\jose3\\AndroidStudioProjects\\Proyecto_Plataformas_2.0\\app\\src\\main\\res\\drawable\\HORARIO ESTUDIANTE.xlsx"
         val filePath = "assets\\HORARIO ESTUDIANTE.xlsx"
