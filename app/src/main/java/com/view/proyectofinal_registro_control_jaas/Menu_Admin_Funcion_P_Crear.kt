@@ -2,13 +2,13 @@ package com.view.proyectofinal_registro_control_jaas
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -31,8 +31,7 @@ class Menu_Admin_Funcion_P_Crear : AppCompatActivity() {
             "Lógica Matemática",
             "Introducción a la Ingeniería",
             "Algoritmia",
-            "Técnicas de Lectura y Escritua",
-            "Vida Universitaria"
+            "Técnicas de Lectura y Escritua"
         )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
         spinner.adapter = adapter
